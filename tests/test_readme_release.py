@@ -16,9 +16,10 @@ def test_readme_exists_and_matches_skill_project_positioning():
     text = _readme_text()
     assert "ModelViz Skill" in text
     assert "SKILL.md" in text
-    assert "Codex" in text
-    assert "Claude Code" in text
-    assert "不是普通命令行绘图应用" in text
+    assert "面向数学建模竞赛和科研报告的科学可视化 Skill" in text
+    assert "近百个正式科学可视化模板" in text
+    assert "上百个预览与模板资产" in text
+    assert "覆盖聚类降维、相关性、分布不确定性、预测评估、敏感性分析、网络关系、空间分析和时序趋势" in text
     assert "不建议预先安装所有模板可能用到的依赖" in text
 
 
@@ -42,13 +43,26 @@ def test_readme_referenced_project_paths_exist():
         "docs/package_name_mapping.yaml",
         "evals/evaluation_report.md",
         "evals/evaluation_summary.json",
-        "templates/01_CLU_clustering_reduction/01_CLU_004/assets/preview.png",
-        "templates/06_NET_network_flow/06_NET_001/assets/preview.png",
-        "templates/12_TRD_trend_time_series/12_TRD_003/output/preview.png",
-        "templates/12_TRD_trend_time_series/12_TRD_004/assets/preview.png",
-        "templates/01_CLU_clustering_reduction/01_CLU_003/assets/preview.png",
         "templates/01_CLU_clustering_reduction/01_CLU_001/output/preview.png",
         "templates/01_CLU_clustering_reduction/01_CLU_002/assets/preview.png",
+        "templates/10_SEN_sensitivity_robustness/10_SEN_005/output/preview.png",
+        "templates/10_SEN_sensitivity_robustness/10_SEN_011/output/preview.png",
+        "templates/09_REL_relationship_correlation/09_REL_005/output/preview.png",
+        "templates/09_REL_relationship_correlation/09_REL_013/output/preview.png",
+        "templates/06_NET_network_flow/06_NET_001/assets/preview.png",
+        "templates/03_EVL_composite_evaluation/03_EVL_002/output/preview.png",
+        "templates/01_CLU_clustering_reduction/01_CLU_004/assets/preview.png",
+        "templates/02_CMP_comparison_ranking/02_CMP_001/output/preview.png",
+        "templates/01_CLU_clustering_reduction/01_CLU_003/assets/preview.png",
+        "templates/02_CMP_comparison_ranking/02_CMP_012/output/preview.png",
+        "templates/04_DIS_distribution_uncertainty/04_DIS_006/output/preview.png",
+        "templates/05_MPN_multi_panel_report/05_MPN_004/output/preview.png",
+        "templates/09_REL_relationship_correlation/09_REL_016/output/preview.png",
+        "templates/09_REL_relationship_correlation/09_REL_017/output/preview.png",
+        "templates/09_REL_relationship_correlation/09_REL_019/output/preview.png",
+        "templates/10_SEN_sensitivity_robustness/10_SEN_006/output/preview.png",
+        "templates/10_SEN_sensitivity_robustness/10_SEN_015/output/preview.png",
+        "templates/11_SPA_spatial_geographic/11_SPA_001/output/preview.png",
     ]
     missing_from_text = [path for path in referenced_paths if path not in text]
     assert missing_from_text == []
@@ -56,7 +70,7 @@ def test_readme_referenced_project_paths_exist():
     missing_on_disk = [path for path in referenced_paths if not (ROOT / path).exists()]
     assert missing_on_disk == []
 
-    assert text.count("<img src=") == 7
+    assert text.count("<img src=") == 20
 
 
 def test_readme_does_not_contain_unsupported_install_or_cli_claims():

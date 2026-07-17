@@ -1,54 +1,136 @@
 # ModelViz Skill
 
-面向数学建模竞赛和科研报告的科学可视化 Skill。用户提供自然语言绘图需求和数据文件后，Skill 会理解绘图目标，从本地模板库中选择合适模板，基于真实数据生成可复现 Python 绘图代码和图片，并进行质量检查与必要的自动修复。
+这是一个面向数学建模竞赛和科研报告的科学可视化 Skill。用户提供自然语言绘图需求和数据文件后，Skill 会理解绘图目标，从本地模板库中选择合适模板，基于真实数据生成可复现 Python 绘图代码和图片，并进行质量检查与必要的自动修复。
 
-供 Codex、Claude Code 或其他能够读取 `SKILL.md` 并调用项目脚本的兼容宿主使用。不同宿主的软件执行、文件访问和视觉模型能力不同，最终效果取决于宿主是否支持结构化输出、代码执行和图片输入。
+
+做数学建模图表时，真正耗时间的往往不是画一张图，而是找到合适的科研版式、把数据列对上，再把标题、坐标轴、图例和配色调到能放进论文或答辩里。
+
+ModelViz 把这套流程整理成一个可复用 Skill：内置近百个正式科学可视化模板，配套上百个预览与模板资产，覆盖聚类降维、相关性、分布不确定性、预测评估、敏感性分析、网络关系、空间分析和时序趋势等方向。用户给出绘图需求和数据文件后，Skill 会从模板库中筛选、结合数据选择模板、适配代码、执行绘图，并输出图表、脚本和质量报告。
 
 ## 效果预览
 
-这些图来自当前模板库，展示了 Skill 可复用的科研图表风格、版式密度和配色方向。
+精选 20 张当前模板库中的预览图，展示 Skill 可复用的科研图表风格、版式密度和配色方向。
 
 <div align="center">
   <table>
     <tr>
-      <td width="25%" align="center">
-        <img src="templates/01_CLU_clustering_reduction/01_CLU_004/assets/preview.png" alt="聚类降维模板预览" width="100%">
+      <td width="50%" align="center">
+        <img src="templates/01_CLU_clustering_reduction/01_CLU_001/output/preview.png" alt="聚类关联矩阵预览" width="100%">
         <br>
-        <sub>聚类与降维分析</sub>
+        <sub>聚类关联矩阵</sub>
       </td>
-      <td width="25%" align="center">
-        <img src="templates/06_NET_network_flow/06_NET_001/assets/preview.png" alt="网络流模板预览" width="100%">
+      <td width="50%" align="center">
+        <img src="templates/01_CLU_clustering_reduction/01_CLU_002/assets/preview.png" alt="聚类热力图预览" width="100%">
         <br>
-        <sub>网络关系与流向</sub>
-      </td>
-      <td width="25%" align="center">
-        <img src="templates/12_TRD_trend_time_series/12_TRD_003/output/preview.png" alt="趋势时序模板预览" width="100%">
-        <br>
-        <sub>趋势与时间序列</sub>
-      </td>
-      <td width="25%" align="center">
-        <img src="templates/12_TRD_trend_time_series/12_TRD_004/assets/preview.png" alt="多序列趋势模板预览" width="100%">
-        <br>
-        <sub>多序列趋势对比</sub>
+        <sub>聚类热力图</sub>
       </td>
     </tr>
-  </table>
-  <table>
     <tr>
-      <td width="33%" align="center">
-        <img src="templates/01_CLU_clustering_reduction/01_CLU_003/assets/preview.png" alt="聚类结构模板预览" width="100%">
+      <td width="50%" align="center">
+        <img src="templates/10_SEN_sensitivity_robustness/10_SEN_005/output/preview.png" alt="GAM 等高线面板预览" width="100%">
         <br>
-        <sub>聚类结构展示</sub>
+        <sub>GAM 等高线面板</sub>
       </td>
-      <td width="33%" align="center">
-        <img src="templates/01_CLU_clustering_reduction/01_CLU_001/output/preview.png" alt="降维投影模板预览" width="100%">
+      <td width="50%" align="center">
+        <img src="templates/10_SEN_sensitivity_robustness/10_SEN_011/output/preview.png" alt="SHAP 交互网络预览" width="100%">
         <br>
-        <sub>降维投影与分组</sub>
+        <sub>SHAP 交互网络</sub>
       </td>
-      <td width="33%" align="center">
-        <img src="templates/01_CLU_clustering_reduction/01_CLU_002/assets/preview.png" alt="聚类热力模板预览" width="100%">
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="templates/09_REL_relationship_correlation/09_REL_005/output/preview.png" alt="三角相关热力图预览" width="100%">
         <br>
-        <sub>聚类热力与矩阵</sub>
+        <sub>三角相关热力图</sub>
+      </td>
+      <td width="50%" align="center">
+        <img src="templates/09_REL_relationship_correlation/09_REL_013/output/preview.png" alt="三角网络相关图预览" width="100%">
+        <br>
+        <sub>三角网络相关图</sub>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="templates/06_NET_network_flow/06_NET_001/assets/preview.png" alt="弦图网络关系预览" width="100%">
+        <br>
+        <sub>弦图网络关系</sub>
+      </td>
+      <td width="50%" align="center">
+        <img src="templates/03_EVL_composite_evaluation/03_EVL_002/output/preview.png" alt="径向综合评价预览" width="100%">
+        <br>
+        <sub>径向综合评价</sub>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="templates/01_CLU_clustering_reduction/01_CLU_004/assets/preview.png" alt="RDA 排序分析预览" width="100%">
+        <br>
+        <sub>RDA / 排序分析</sub>
+      </td>
+      <td width="50%" align="center">
+        <img src="templates/02_CMP_comparison_ranking/02_CMP_001/output/preview.png" alt="环形柱状对比预览" width="100%">
+        <br>
+        <sub>环形柱状对比</sub>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="templates/01_CLU_clustering_reduction/01_CLU_003/assets/preview.png" alt="聚类投影密度预览" width="100%">
+        <br>
+        <sub>聚类投影密度</sub>
+      </td>
+      <td width="50%" align="center">
+        <img src="templates/02_CMP_comparison_ranking/02_CMP_012/output/preview.png" alt="热力图排名矩阵预览" width="100%">
+        <br>
+        <sub>热力图排名矩阵</sub>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="templates/04_DIS_distribution_uncertainty/04_DIS_006/output/preview.png" alt="小提琴分布矩阵预览" width="100%">
+        <br>
+        <sub>小提琴分布矩阵</sub>
+      </td>
+      <td width="50%" align="center">
+        <img src="templates/05_MPN_multi_panel_report/05_MPN_004/output/preview.png" alt="三维响应面组合预览" width="100%">
+        <br>
+        <sub>三维响应面组合</sub>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="templates/09_REL_relationship_correlation/09_REL_016/output/preview.png" alt="扇形相关热力图预览" width="100%">
+        <br>
+        <sub>扇形相关热力图</sub>
+      </td>
+      <td width="50%" align="center">
+        <img src="templates/09_REL_relationship_correlation/09_REL_017/output/preview.png" alt="边际回归散点图预览" width="100%">
+        <br>
+        <sub>边际回归散点图</sub>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="templates/09_REL_relationship_correlation/09_REL_019/output/preview.png" alt="散点矩阵热力图预览" width="100%">
+        <br>
+        <sub>散点矩阵热力图</sub>
+      </td>
+      <td width="50%" align="center">
+        <img src="templates/10_SEN_sensitivity_robustness/10_SEN_006/output/preview.png" alt="多关系散点面板预览" width="100%">
+        <br>
+        <sub>多关系散点面板</sub>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+        <img src="templates/10_SEN_sensitivity_robustness/10_SEN_015/output/preview.png" alt="敏感性等高线矩阵预览" width="100%">
+        <br>
+        <sub>敏感性等高线矩阵</sub>
+      </td>
+      <td width="50%" align="center">
+        <img src="templates/11_SPA_spatial_geographic/11_SPA_001/output/preview.png" alt="空间主导因子图预览" width="100%">
+        <br>
+        <sub>空间主导因子图</sub>
       </td>
     </tr>
   </table>
