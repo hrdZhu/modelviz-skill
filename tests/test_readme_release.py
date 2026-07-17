@@ -42,13 +42,21 @@ def test_readme_referenced_project_paths_exist():
         "docs/package_name_mapping.yaml",
         "evals/evaluation_report.md",
         "evals/evaluation_summary.json",
-        "examples/evaluation_trend_chart.png",
+        "templates/01_CLU_clustering_reduction/01_CLU_004/assets/preview.png",
+        "templates/06_NET_network_flow/06_NET_001/assets/preview.png",
+        "templates/12_TRD_trend_time_series/12_TRD_003/output/preview.png",
+        "templates/12_TRD_trend_time_series/12_TRD_004/assets/preview.png",
+        "templates/01_CLU_clustering_reduction/01_CLU_003/assets/preview.png",
+        "templates/01_CLU_clustering_reduction/01_CLU_001/output/preview.png",
+        "templates/01_CLU_clustering_reduction/01_CLU_002/assets/preview.png",
     ]
     missing_from_text = [path for path in referenced_paths if path not in text]
     assert missing_from_text == []
 
     missing_on_disk = [path for path in referenced_paths if not (ROOT / path).exists()]
     assert missing_on_disk == []
+
+    assert text.count("<img src=") == 7
 
 
 def test_readme_does_not_contain_unsupported_install_or_cli_claims():

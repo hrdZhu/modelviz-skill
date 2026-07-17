@@ -4,6 +4,56 @@
 
 本仓库不是普通命令行绘图应用，而是供 Codex、Claude Code 或其他能够读取 `SKILL.md` 并调用项目脚本的兼容宿主使用。不同宿主的软件执行、文件访问和视觉模型能力不同，最终效果取决于宿主是否支持结构化输出、代码执行和图片输入。
 
+## 效果预览
+
+这些图来自当前模板库，展示了 Skill 可复用的科研图表风格、版式密度和配色方向。
+
+<div align="center">
+  <table>
+    <tr>
+      <td width="25%" align="center">
+        <img src="templates/01_CLU_clustering_reduction/01_CLU_004/assets/preview.png" alt="聚类降维模板预览" width="100%">
+        <br>
+        <sub>聚类与降维分析</sub>
+      </td>
+      <td width="25%" align="center">
+        <img src="templates/06_NET_network_flow/06_NET_001/assets/preview.png" alt="网络流模板预览" width="100%">
+        <br>
+        <sub>网络关系与流向</sub>
+      </td>
+      <td width="25%" align="center">
+        <img src="templates/12_TRD_trend_time_series/12_TRD_003/output/preview.png" alt="趋势时序模板预览" width="100%">
+        <br>
+        <sub>趋势与时间序列</sub>
+      </td>
+      <td width="25%" align="center">
+        <img src="templates/12_TRD_trend_time_series/12_TRD_004/assets/preview.png" alt="多序列趋势模板预览" width="100%">
+        <br>
+        <sub>多序列趋势对比</sub>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td width="33%" align="center">
+        <img src="templates/01_CLU_clustering_reduction/01_CLU_003/assets/preview.png" alt="聚类结构模板预览" width="100%">
+        <br>
+        <sub>聚类结构展示</sub>
+      </td>
+      <td width="33%" align="center">
+        <img src="templates/01_CLU_clustering_reduction/01_CLU_001/output/preview.png" alt="降维投影模板预览" width="100%">
+        <br>
+        <sub>降维投影与分组</sub>
+      </td>
+      <td width="33%" align="center">
+        <img src="templates/01_CLU_clustering_reduction/01_CLU_002/assets/preview.png" alt="聚类热力模板预览" width="100%">
+        <br>
+        <sub>聚类热力与矩阵</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
 ## 核心特点
 
 - 科学可视化模板库：`templates/` 中保存数学建模和科研报告常见图表模板，`docs/template_catalog.yaml` 记录统一元数据。
@@ -162,17 +212,6 @@ modelviz-skill/
 - 最终质量报告：`workspace/final_quality_report.json`。
 
 普通用户不需要手动编辑这些中间 JSON。流程失败时，宿主模型应准确说明失败阶段、原因和建议，不应伪造成功结果。
-
-## 示例结果
-
-公开离线评估示例：
-
-- 用户需求：展示不同年份产量变化趋势，适合论文正文，风格简洁。
-- 数据类型：CSV 时间序列数据。
-- 选中模板：`trd_dual_axis_bar_line`。
-- 输出示例：
-
-![趋势图示例](examples/evaluation_trend_chart.png)
 
 ## 质量评估
 
