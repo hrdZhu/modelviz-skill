@@ -1,0 +1,24 @@
+# import 名与 pip 包名映射。仅使用明确已知映射，不让模型猜测包名。
+sklearn: scikit-learn
+cv2: opencv-python
+PIL: Pillow
+yaml: PyYAML
+skimage: scikit-image
+mpl_toolkits: matplotlib
+dateutil: python-dateutil
+matplotlib: matplotlib
+numpy: numpy
+pandas: pandas
+scipy: scipy
+seaborn: seaborn
+networkx: networkx
+plotly: plotly
+shap: shap
+xgboost: xgboost
+lightgbm: lightgbm
+catboost: catboost
+rasterio: rasterio
+pingouin: pingouin
+pygam: pygam
+pyCirclize: pyCirclize
+ternary: python-ternary

@@ -1,0 +1,2738 @@
+templates:
+- id: clu_pca_correlation_heatmap
+  name: 主成分分析（PCA）与相关性热图的组合图
+  category: clustering_reduction
+  description: 用相关性热图和 PCA 载荷网络同时展示变量间相关结构与主成分贡献。
+  keywords:
+  - PCA
+  - 主成分分析
+  - 相关性热图
+  - 因子载荷
+  - 变量降维
+  synonyms:
+  - 主成分图
+  - 载荷热图
+  - PCA相关图
+  - 降维相关分析
+  use_cases:
+  - 分析多个指标之间的相关性并展示主成分载荷
+  - 在一个图中同时呈现相关矩阵和变量对主成分的贡献
+  - 做变量筛选、维度压缩或综合指标解释
+  negative_keywords:
+  - 时间序列趋势预测
+  - 空间栅格制图
+  - 分类模型ROC评估
+  chart_type: composite_heatmap_network
+  preview: templates/01_CLU_clustering_reduction/01_CLU_001/assets/preview.png
+  code_path: templates/01_CLU_clustering_reduction/01_CLU_001/主成分分析（PCA）与相关性热图的组合图.py
+  dependencies:
+  - pillow
+  - factor_analyzer
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+- id: clu_spearman_cluster_heatmap
+  name: Spearman层次聚类相关性热图
+  category: clustering_reduction
+  description: 用 Spearman 相关系数、显著性和层次聚类展示两组变量的关联模式。
+  keywords:
+  - Spearman相关
+  - 层次聚类
+  - 相关性热图
+  - 显著性标记
+  synonyms:
+  - 斯皮尔曼热图
+  - 聚类相关图
+  - 相关聚类热图
+  use_cases:
+  - 比较两类指标之间的非参数相关关系
+  - 按相关模式对变量进行聚类分组
+  - 展示相关系数和P值显著性
+  negative_keywords:
+  - PCA排序
+  - 三维曲面
+  - 模型学习曲线
+  chart_type: clustered_heatmap
+  preview: templates/01_CLU_clustering_reduction/01_CLU_002/assets/preview.png
+  code_path: templates/01_CLU_clustering_reduction/01_CLU_002/Spearman层次聚类相关性热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+- id: clu_pcoa_permanova
+  name: PCoA分析图
+  category: clustering_reduction
+  description: 用 PCoA 坐标、置信椭圆和组间检验展示样本群落或距离矩阵差异。
+  keywords:
+  - PCoA
+  - 距离矩阵
+  - PERMANOVA
+  - 置信椭圆
+  - 组间差异
+  synonyms:
+  - 主坐标分析
+  - β多样性排序
+  - 样本距离排序图
+  use_cases:
+  - 展示样本按群落距离或特征距离形成的分组差异
+  - 需要同时给出组间显著性检验结果
+  - 比较处理组、地点或类别在二维排序空间中的分离程度
+  negative_keywords:
+  - 变量相关热图
+  - 时间滞后分析
+  - SHAP特征解释
+  chart_type: ordination_scatter
+  preview: templates/01_CLU_clustering_reduction/01_CLU_003/assets/preview.png
+  code_path: templates/01_CLU_clustering_reduction/01_CLU_003/PCoA分析图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+  - scikit-bio
+- id: clu_rda_biplot
+  name: RDA冗余分析
+  category: clustering_reduction
+  description: 用 RDA 双标图展示样本、性状和环境因子之间的约束排序关系。
+  keywords:
+  - RDA
+  - 冗余分析
+  - 约束排序
+  - 环境因子箭头
+  - 样本分组
+  synonyms:
+  - RDA排序图
+  - 环境因子双标图
+  - 约束主成分图
+  use_cases:
+  - 分析环境因子对响应变量或群落结构的解释
+  - 展示样本分组和变量箭头方向
+  - 需要报告RDA轴方差解释率
+  negative_keywords:
+  - 单变量柱状比较
+  - 模型ROC曲线
+  - 栅格批处理
+  chart_type: ordination_biplot
+  preview: templates/01_CLU_clustering_reduction/01_CLU_004/assets/preview.png
+  code_path: templates/01_CLU_clustering_reduction/01_CLU_004/RDA冗余分析.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-bio
+  - scikit-learn
+- id: cmp_circular_barplot
+  name: 环状条形图
+  category: comparison_ranking
+  description: 用环状条形图在极坐标中比较多类别数值大小和排序。
+  keywords:
+  - 环状条形图
+  - 极坐标
+  - 排序比较
+  - 多类别
+  synonyms:
+  - 圆形柱状图
+  - 径向条形图
+  - 环形排名图
+  use_cases:
+  - 展示大量类别的指标排名
+  - 希望用圆形布局压缩长条形图空间
+  - 比较不同对象的单一数值大小
+  negative_keywords:
+  - 组成占比随时间变化
+  - 相关性矩阵
+  - 空间地图
+  chart_type: circular_bar_chart
+  preview: templates/02_CMP_comparison_ranking/02_CMP_001/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_001/环状条形图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: cmp_ternary_scatter
+  name: 三元图
+  category: comparison_ranking
+  description: 用三元散点图展示三个组成部分之和固定时的比例结构与分布。
+  keywords:
+  - 三元图
+  - 组成比例
+  - 三变量约束
+  - 散点
+  - 气泡
+  synonyms:
+  - 三角图
+  - ternary plot
+  - 三成分比例图
+  use_cases:
+  - 分析三类成分占比关系
+  - 展示生态质量、碳固存等三指标组成
+  - 比较样本在三变量比例空间中的聚集位置
+  negative_keywords:
+  - 四个以上维度比较
+  - 时间趋势
+  - 相关矩阵热图
+  chart_type: ternary_scatter
+  preview: templates/02_CMP_comparison_ranking/02_CMP_002/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_002/三元图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - python-ternary
+- id: cmp_correlation_stacked_bar
+  name: 相关性分析堆叠条形图
+  category: comparison_ranking
+  description: 用堆叠条形图展示多个因子在不同分组中的相关贡献或构成差异。
+  keywords:
+  - 堆叠条形图
+  - 相关性分析
+  - 分组比较
+  - 贡献比例
+  synonyms:
+  - 堆积柱状图
+  - 分组堆叠图
+  - 因子贡献图
+  use_cases:
+  - 比较多个指标在不同湿度或场景下的贡献构成
+  - 展示相关分析结果的分层组成
+  - 需要突出不同因子的相对大小
+  negative_keywords:
+  - 连续时间曲线
+  - 空间栅格输出
+  - PCA降维
+  chart_type: stacked_bar_chart
+  preview: templates/02_CMP_comparison_ranking/02_CMP_003/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_003/相关性分析堆叠条形图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: cmp_flowing_percentage_stack
+  name: 流动趋势百分比堆叠图
+  category: comparison_ranking
+  description: 用流动式百分比堆叠面积图展示分类组成在不同端口或阶段间的变化。
+  keywords:
+  - 百分比堆叠
+  - 组成变化
+  - 流动趋势
+  - 阶段比较
+  synonyms:
+  - 流动堆叠图
+  - 百分比面积图
+  - 组成演替图
+  use_cases:
+  - 展示类别占比随阶段、站点或端口变化
+  - 比较组成结构的动态转移
+  - 强调总量归一化后的比例差异
+  negative_keywords:
+  - 绝对值排名
+  - 相关显著性检验
+  - 三维瀑布图
+  chart_type: percentage_stacked_area
+  preview: templates/02_CMP_comparison_ranking/02_CMP_004/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_004/流动趋势百分比堆叠图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: cmp_gradient_single_factor_bar
+  name: 渐变单因子条形图
+  category: comparison_ranking
+  description: 用多小图渐变条形图展示单因子效应大小、排序和显著性。
+  keywords:
+  - 单因子分析
+  - 渐变条形图
+  - 显著性标记
+  - 排序
+  synonyms:
+  - 单因素柱状图
+  - 显著性条形图
+  - 因子排名图
+  use_cases:
+  - 比较多个变量的单因子贡献或影响强度
+  - 需要在条形图上标注显著性
+  - 把多个指标分面拼接成报告图
+  negative_keywords:
+  - 多变量交互
+  - 时间序列预测
+  - 三元比例组成
+  chart_type: small_multiple_bar_chart
+  preview: templates/02_CMP_comparison_ranking/02_CMP_005/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_005/渐变单因子条形图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: cmp_horizontal_percentage_stack
+  name: 横轴百分比堆叠图
+  category: comparison_ranking
+  description: 用横向百分比堆叠条形图和连接线展示不同分组的组成比例。
+  keywords:
+  - 横向堆叠
+  - 百分比组成
+  - 连接线
+  - 分组比较
+  synonyms:
+  - 横向百分比条形图
+  - 组成对比图
+  - 堆叠横条图
+  use_cases:
+  - 展示不同样点或分组中的类别占比
+  - 比较组成比例在多行之间的变化
+  - 需要百分比标签和层间连接
+  negative_keywords:
+  - 趋势预测
+  - 相关网络
+  - SHAP解释
+  chart_type: horizontal_stacked_bar_chart
+  preview: templates/02_CMP_comparison_ranking/02_CMP_006/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_006/横轴百分比堆叠图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: cmp_multi_donut_charts
+  name: 多组环形图
+  category: comparison_ranking
+  description: 用多组环形图并排展示多个对象的类别占比结构。
+  keywords:
+  - 环形图
+  - 多组对比
+  - 占比
+  - 饼图矩阵
+  synonyms:
+  - 甜甜圈图
+  - 多饼图
+  - 分类占比图
+  use_cases:
+  - 比较多个样本、模型或场景的组成比例
+  - 需要中心文字和统一图例
+  - 展示每组内部的类别结构
+  negative_keywords:
+  - 连续数值趋势
+  - 相关系数矩阵
+  - 空间栅格
+  chart_type: donut_chart_grid
+  preview: templates/02_CMP_comparison_ranking/02_CMP_007/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_007/多组环形图.py
+  dependencies:
+  - pillow
+  - matplotlib
+- id: cmp_multi_metric_radar
+  name: 多指标雷达对比图
+  category: comparison_ranking
+  description: 用雷达图比较多个对象在多指标维度上的综合表现。
+  keywords:
+  - 雷达图
+  - 多指标评价
+  - 方案对比
+  - 归一化指标
+  synonyms:
+  - 蛛网图
+  - 能力画像
+  - 多维对比图
+  use_cases:
+  - 比较多个模型或方案的多项指标
+  - 展示综合评价中的优势短板
+  - 需要闭合多边形表达多维轮廓
+  negative_keywords:
+  - 类别占比组成
+  - 相关矩阵
+  - 空间分布图
+  chart_type: radar_chart
+  preview: templates/02_CMP_comparison_ranking/02_CMP_008/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_008/多指标雷达对比图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: cmp_nightingale_rose_grid
+  name: 自由组合南丁格尔玫瑰图
+  category: comparison_ranking
+  description: 用多组南丁格尔玫瑰图展示类别占比或数值在多个对象中的径向分布。
+  keywords:
+  - 南丁格尔玫瑰图
+  - 极坐标
+  - 多组比较
+  - 比例
+  synonyms:
+  - 玫瑰图
+  - 极区图
+  - 扇形柱状图
+  use_cases:
+  - 展示多个样本中类别组成差异
+  - 用极坐标突出比例大小
+  - 需要多个玫瑰图拼接比较
+  negative_keywords:
+  - 精确时间趋势
+  - 相关显著性热图
+  - 模型残差诊断
+  chart_type: rose_chart_grid
+  preview: templates/02_CMP_comparison_ranking/02_CMP_009/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_009/自由组合南丁格尔玫瑰图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: cmp_stack_pie_box_report
+  name: 百分比堆叠、内嵌饼图与箱线图报告
+  category: comparison_ranking
+  description: 用百分比堆叠、内嵌饼图和箱线图组合展示多层分类贡献与分布。
+  keywords:
+  - 百分比堆叠
+  - 内嵌饼图
+  - 箱线图
+  - 综合报告
+  synonyms:
+  - 组成报告图
+  - 堆叠饼图箱线组合
+  - 多图拼版
+  use_cases:
+  - 同时展示行业、交通和其他来源贡献
+  - 需要组成比例与分布统计放在一张图中
+  - 制作多面板比较报告
+  negative_keywords:
+  - 单一散点回归
+  - 空间栅格分析
+  - PCA排序
+  chart_type: multi_panel_report
+  preview: templates/02_CMP_comparison_ranking/02_CMP_010/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_010/百分比堆叠、内嵌饼图与箱线图报告.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: cmp_radial_stacked_bar
+  name: 径向堆叠图
+  category: comparison_ranking
+  description: 用径向堆叠条形图展示多类别在多个对象中的分层组成。
+  keywords:
+  - 径向堆叠
+  - 极坐标条形
+  - 类别组成
+  - 多层比较
+  synonyms:
+  - 圆形堆叠柱状图
+  - 环形堆叠图
+  - 径向组成图
+  use_cases:
+  - 展示样本或地区的多类别组成
+  - 在圆形布局中比较多组比例
+  - 需要长标签围绕圆周展示
+  negative_keywords:
+  - 相关矩阵
+  - 模型预测评估
+  - 空间地图
+  chart_type: radial_stacked_bar_chart
+  preview: templates/02_CMP_comparison_ranking/02_CMP_011/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_011/径向堆叠图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: cmp_shap_heatmap_bar_report
+  name: SHAP组合分析图
+  category: comparison_ranking
+  description: 用 SHAP 重要性、热图、饼图和箱线图组合展示特征贡献与分组差异。
+  keywords:
+  - SHAP
+  - 特征重要性
+  - 热图
+  - 箱线图
+  - 组合分析
+  synonyms:
+  - SHAP综合图
+  - 特征贡献报告
+  - 解释性热图
+  use_cases:
+  - 展示模型特征贡献排名和贡献强度分布
+  - 比较不同分组或行业的SHAP贡献
+  - 需要多面板解释模型结果
+  negative_keywords:
+  - 无模型的简单比例图
+  - 栅格地图
+  - PCoA排序
+  chart_type: shap_multi_panel_report
+  preview: templates/02_CMP_comparison_ranking/02_CMP_012/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_012/SHAP组合分析图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - seaborn
+  - shap
+  - scikit-learn
+- id: cmp_3d_ribbon_chart
+  name: 3D条带图
+  category: comparison_ranking
+  description: 用三维条带折线展示多个类别随时间或序列变化的趋势。
+  keywords:
+  - 3D条带图
+  - 三维趋势
+  - 时间序列
+  - 多类别
+  synonyms:
+  - 三维带状图
+  - 3D折线带
+  - 立体趋势图
+  use_cases:
+  - 比较多个区域或类别的年度变化
+  - 需要在三维空间中展示序列趋势
+  - 突出不同类别曲线的层次关系
+  negative_keywords:
+  - 二维相关矩阵
+  - 显著性检验
+  - 占比饼图
+  chart_type: 3d_ribbon_chart
+  preview: templates/02_CMP_comparison_ranking/02_CMP_013/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_013/3D条带图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: cmp_3d_waterfall_distribution
+  name: 三维瀑布图
+  category: comparison_ranking
+  description: 用三维瀑布图展示多组分布曲线在连续维度上的层叠变化。
+  keywords:
+  - 三维瀑布图
+  - 分布曲线
+  - 层叠趋势
+  - 多组比较
+  synonyms:
+  - 3D瀑布曲线
+  - 立体山脊图
+  - 层叠分布图
+  use_cases:
+  - 展示多个组别的峰形或光谱分布
+  - 比较分布随组别变化的形态
+  - 需要三维层叠曲线效果
+  negative_keywords:
+  - 简单排名
+  - 百分比组成
+  - 相关性网络
+  chart_type: 3d_waterfall_plot
+  preview: templates/02_CMP_comparison_ranking/02_CMP_014/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_014/三维瀑布图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: cmp_3d_stacked_surface
+  name: 三维堆叠图
+  category: comparison_ranking
+  description: 用多层三维堆叠面展示不同平面上的矩阵数值或热力分布。
+  keywords:
+  - 三维堆叠图
+  - 热力平面
+  - 多层矩阵
+  - 空间层叠
+  synonyms:
+  - 3D堆叠热图
+  - 多层曲面图
+  - 立体矩阵图
+  use_cases:
+  - 比较多个层级或场景的二维矩阵分布
+  - 展示基因、变量或坐标网格上的强度变化
+  - 需要多个平面分层呈现
+  negative_keywords:
+  - 单变量柱状图
+  - 相关网络
+  - ROC曲线
+  chart_type: 3d_stacked_surface
+  preview: templates/02_CMP_comparison_ranking/02_CMP_015/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_015/三维堆叠图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: cmp_3d_bar_chart
+  name: 3D柱状图
+  category: comparison_ranking
+  description: 用三维柱状图展示二维类别网格上的数值高度差异。
+  keywords:
+  - 3D柱状图
+  - 二维网格
+  - 高度比较
+  - 矩阵数值
+  synonyms:
+  - 三维柱形图
+  - 立体柱状图
+  - 3D bar
+  use_cases:
+  - 展示两个分类维度交叉后的数值大小
+  - 比较矩阵中各单元的强度
+  - 需要颜色和高度同时编码数值
+  negative_keywords:
+  - 时间滞后相关
+  - PCA排序
+  - 空间回归
+  chart_type: 3d_bar_chart
+  preview: templates/02_CMP_comparison_ranking/02_CMP_016/assets/preview.png
+  code_path: templates/02_CMP_comparison_ranking/02_CMP_016/3D柱状图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: evl_ml_metric_circular_dashboard
+  name: 机器学习多维度评估环形图
+  category: composite_evaluation
+  description: 用多圈环形仪表展示机器学习分类、回归和特征解释的多维度评估结果。
+  keywords:
+  - 机器学习评估
+  - 环形仪表
+  - 分类指标
+  - 回归指标
+  - SHAP
+  synonyms:
+  - 模型综合评价图
+  - 多维性能环图
+  - ML评估仪表盘
+  use_cases:
+  - 汇总二分类、多分类和回归模型性能
+  - 在一张图中展示AUC、R2、误差和解释性指标
+  - 制作模型评估总览
+  negative_keywords:
+  - 简单相关热图
+  - 空间栅格输出
+  - 单组箱线图
+  chart_type: circular_dashboard
+  preview: templates/03_EVL_composite_evaluation/03_EVL_001/assets/preview.png
+  code_path: templates/03_EVL_composite_evaluation/03_EVL_001/机器学习多维度评估环形图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - shap
+  - scikit-learn
+- id: evl_multiomics_circular_heatmap
+  name: 多组学验证环形热图
+  category: composite_evaluation
+  description: 用环形热图展示多组学验证指标在多层分类中的强弱和一致性。
+  keywords:
+  - 多组学
+  - 环形热图
+  - 验证结果
+  - 多层分类
+  synonyms:
+  - 组学环图
+  - 圆形热图
+  - 多层验证图
+  use_cases:
+  - 展示多组学指标在不同组别中的验证强度
+  - 比较多个生物标志物或通路的层级表现
+  - 需要环形布局表达多层矩阵
+  negative_keywords:
+  - 时间趋势
+  - 单变量排序
+  - ROC曲线
+  chart_type: circular_heatmap
+  preview: templates/03_EVL_composite_evaluation/03_EVL_002/assets/preview.png
+  code_path: templates/03_EVL_composite_evaluation/03_EVL_002/多组学验证环形热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: dis_combined_boxplot_grid
+  name: 组合箱线图
+  category: distribution_uncertainty
+  description: 用多面板箱线图比较多个数据集或指标在分组间的分布差异。
+  keywords:
+  - 箱线图
+  - 多面板
+  - 分组分布
+  - 离群点
+  synonyms:
+  - 组合箱线图
+  - 箱型图矩阵
+  - 分布对比图
+  use_cases:
+  - 批量展示多个指标的组间分布
+  - 比较处理组、区域或类别的中位数和离散程度
+  - 需要多张箱线图拼接
+  negative_keywords:
+  - 相关网络
+  - 空间栅格
+  - ROC评估
+  chart_type: boxplot_grid
+  preview: templates/04_DIS_distribution_uncertainty/04_DIS_001/assets/preview.png
+  code_path: templates/04_DIS_distribution_uncertainty/04_DIS_001/组合箱线图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - seaborn
+- id: dis_ridgeline_distribution
+  name: 山脊分布图
+  category: distribution_uncertainty
+  description: 用山脊图展示多个组别连续变量分布的峰形和位置差异。
+  keywords:
+  - 山脊图
+  - 核密度分布
+  - 多组分布
+  - 均值线
+  synonyms:
+  - 岭线图
+  - ridgeline
+  - 分布山脉图
+  use_cases:
+  - 比较不同气候或类别下的连续变量分布
+  - 展示分布峰形、均值或中位数差异
+  - 需要层叠密度曲线
+  negative_keywords:
+  - 分类占比
+  - 相关矩阵
+  - 三元图
+  chart_type: ridgeline_plot
+  preview: templates/04_DIS_distribution_uncertainty/04_DIS_002/assets/preview.png
+  code_path: templates/04_DIS_distribution_uncertainty/04_DIS_002/山脊分布图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+- id: dis_violin_mean_change_grid
+  name: 均值变化小提琴图
+  category: distribution_uncertainty
+  description: 用多面板小提琴图展示多组数据分布形态和均值变化。
+  keywords:
+  - 小提琴图
+  - 均值变化
+  - 多面板
+  - 分布比较
+  synonyms:
+  - violin plot
+  - 分布提琴图
+  - 组间分布图
+  use_cases:
+  - 比较多个指标在不同处理下的分布
+  - 展示均值随组别变化
+  - 批量生成分布比较面板
+  negative_keywords:
+  - 时间序列预测
+  - 网络关系
+  - 空间栅格
+  chart_type: violin_plot_grid
+  preview: templates/04_DIS_distribution_uncertainty/04_DIS_003/assets/preview.png
+  code_path: templates/04_DIS_distribution_uncertainty/04_DIS_003/均值变化小提琴图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - seaborn
+- id: dis_rank_sum_violin_box
+  name: 秩和检验分布图
+  category: distribution_uncertainty
+  description: 用小提琴、箱线和散点展示两组分布差异及秩和检验显著性。
+  keywords:
+  - 秩和检验
+  - 小提琴图
+  - 箱线图
+  - 显著性
+  - 分布差异
+  synonyms:
+  - Mann-Whitney检验图
+  - 两组差异图
+  - 显著性分布图
+  use_cases:
+  - 比较两组连续变量是否存在显著差异
+  - 展示原始散点、箱线和分布形态
+  - 需要在图上标注P值或星号
+  negative_keywords:
+  - 多分类模型评估
+  - 三维曲面
+  - 组成占比图
+  chart_type: violin_boxplot
+  preview: templates/04_DIS_distribution_uncertainty/04_DIS_004/assets/preview.png
+  code_path: templates/04_DIS_distribution_uncertainty/04_DIS_004/秩和检验分布图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+- id: dis_radial_bar_error_significance
+  name: 带显著性标记与误差棒的环形柱状图
+  category: distribution_uncertainty
+  description: 用环形柱状图、误差棒和显著性标记比较多组均值差异。
+  keywords:
+  - 环形柱状图
+  - 误差棒
+  - 显著性标记
+  - 多组比较
+  synonyms:
+  - 径向柱状图
+  - 显著性环图
+  - 误差环形图
+  use_cases:
+  - 展示多组指标均值及不确定性
+  - 需要标注组间显著性字母或星号
+  - 在极坐标中比较多类别差异
+  negative_keywords:
+  - 相关热图
+  - 时间滞后
+  - 空间分析
+  chart_type: radial_bar_error_chart
+  preview: templates/04_DIS_distribution_uncertainty/04_DIS_005/assets/preview.png
+  code_path: templates/04_DIS_distribution_uncertainty/04_DIS_005/带显著性标记与误差棒的环形柱状图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: dis_tukey_hsd_violin_grid
+  name: Tukey HSD检验小提琴图
+  category: distribution_uncertainty
+  description: 用多面板小提琴图展示 Tukey HSD 多重比较后的组间差异。
+  keywords:
+  - Tukey HSD
+  - 多重比较
+  - 小提琴图
+  - 显著性分组
+  synonyms:
+  - Tukey检验图
+  - 事后检验小提琴图
+  - 多组差异图
+  use_cases:
+  - 比较多个处理组的分布并做事后检验
+  - 需要在分布图中表达显著性分组
+  - 展示多个变量的多组差异
+  negative_keywords:
+  - 二分类ROC
+  - 三元比例
+  - 空间地图
+  chart_type: violin_plot_grid
+  preview: templates/04_DIS_distribution_uncertainty/04_DIS_006/assets/preview.png
+  code_path: templates/04_DIS_distribution_uncertainty/04_DIS_006/Tukey HSD检验小提琴图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - seaborn
+  - statsmodels
+- id: mpn_rf_importance_correlation
+  name: RF变量重要性与相关性分析组合图
+  category: multi_panel_report
+  description: 用随机森林变量重要性、SHAP和相关性矩阵组合展示驱动因子分析结果。
+  keywords:
+  - 随机森林
+  - 变量重要性
+  - SHAP
+  - 相关性矩阵
+  - 组合图
+  synonyms:
+  - RF重要性图
+  - 驱动因子报告
+  - 重要性相关矩阵
+  use_cases:
+  - 分析模型中的关键驱动变量
+  - 同时展示特征重要性和变量间相关
+  - 制作随机森林解释性报告
+  negative_keywords:
+  - 无模型的简单分布图
+  - 三元比例图
+  - 时间序列双轴图
+  chart_type: multi_panel_report
+  preview: templates/05_MPN_multi_panel_report/05_MPN_001/assets/preview.png
+  code_path: templates/05_MPN_multi_panel_report/05_MPN_001/RF变量重要性与相关性分析组合图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - shap
+  - scikit-learn
+- id: mpn_scatter_matrix_timeseries_regression
+  name: 散点矩阵与时间序列回归报告
+  category: multi_panel_report
+  description: 用散点矩阵、边缘分布和时间序列回归面板展示变量关系与趋势。
+  keywords:
+  - 散点矩阵
+  - 时间序列
+  - 线性回归
+  - 边缘分布
+  - 多面板
+  synonyms:
+  - pairplot报告
+  - 散点回归矩阵
+  - 趋势回归报告
+  use_cases:
+  - 探索多个变量之间的两两关系
+  - 展示变量随年份变化的回归趋势
+  - 需要散点、分布和回归统计并排呈现
+  negative_keywords:
+  - 空间栅格
+  - 分类ROC
+  - 组成饼图
+  chart_type: scatter_matrix_report
+  preview: templates/05_MPN_multi_panel_report/05_MPN_002/assets/preview.png
+  code_path: templates/05_MPN_multi_panel_report/05_MPN_002/散点矩阵与时间序列回归报告.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - scipy
+  - seaborn
+- id: mpn_plot_postprocessing_grid
+  name: 绘图结果后处理
+  category: multi_panel_report
+  description: 用图像后处理方式把已有绘图结果统一裁切、拼接成多面板报告。
+  keywords:
+  - 图像后处理
+  - 拼图
+  - 多面板
+  - 裁切
+  - 排版
+  synonyms:
+  - 图片拼接
+  - 结果后处理
+  - 图版整理
+  use_cases:
+  - 已有多张输出图需要合成论文图版
+  - 统一裁切边距并排版
+  - 把SHAP等结果图批量拼接
+  negative_keywords:
+  - 需要重新计算统计模型
+  - 生成原始数据图
+  - 空间栅格分析
+  chart_type: image_grid_postprocessing
+  preview: templates/05_MPN_multi_panel_report/05_MPN_003/assets/preview.png
+  code_path: templates/05_MPN_multi_panel_report/05_MPN_003/绘图结果后处理.py
+  dependencies:
+  - pillow
+- id: mpn_3d_surface_scatter_report
+  name: 三维组合分析图
+  category: multi_panel_report
+  description: 用三维曲面、网格和散点组合展示两个变量与响应值之间的非线性关系。
+  keywords:
+  - 三维组合图
+  - 曲面图
+  - 散点
+  - 响应面
+  - 多面板
+  synonyms:
+  - 3D响应面图
+  - 三维关系图
+  - 立体分析图
+  use_cases:
+  - 展示两个自变量共同影响响应变量
+  - 比较观测点与拟合曲面
+  - 需要三维视角表达非线性关系
+  negative_keywords:
+  - 类别占比
+  - 相关热图
+  - ROC曲线
+  chart_type: 3d_surface_report
+  preview: templates/05_MPN_multi_panel_report/05_MPN_004/assets/preview.png
+  code_path: templates/05_MPN_multi_panel_report/05_MPN_004/三维组合分析图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+- id: net_chord_relationship
+  name: 关系和弦图
+  category: network_flow
+  description: 用和弦图展示实体、类别或物种之间的成对关系和连接强度。
+  keywords:
+  - 和弦图
+  - 关系网络
+  - 连接强度
+  - 流向关系
+  synonyms:
+  - 弦图
+  - circos关系图
+  - 环形网络图
+  use_cases:
+  - 展示物种、类别或节点之间的相互连接
+  - 比较关系权重或共现强度
+  - 需要圆形关系网络布局
+  negative_keywords:
+  - 时间趋势曲线
+  - 单变量箱线图
+  - 空间栅格
+  chart_type: chord_diagram
+  preview: templates/06_NET_network_flow/06_NET_001/assets/preview.png
+  code_path: templates/06_NET_network_flow/06_NET_001/关系和弦图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - pyCirclize
+- id: net_multi_set_venn
+  name: 多组韦恩图
+  category: network_flow
+  description: 用多组韦恩图展示集合之间的交集、并集和特有元素。
+  keywords:
+  - 韦恩图
+  - 集合交集
+  - 多组比较
+  - 重叠关系
+  synonyms:
+  - Venn图
+  - 集合重叠图
+  - 交集图
+  use_cases:
+  - 比较多个基因集、物种集或研究集合的重叠
+  - 展示每组独有和共有元素数量
+  - 需要多个集合并排比较
+  negative_keywords:
+  - 连续变量回归
+  - 空间栅格
+  - 三维曲面
+  chart_type: venn_diagram_grid
+  preview: templates/06_NET_network_flow/06_NET_002/assets/preview.png
+  code_path: templates/06_NET_network_flow/06_NET_002/多组韦恩图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - matplotlib-venn
+  - pandas
+- id: opt_hants_parameter_selection
+  name: HANTS最佳参数选择
+  category: optimization_decision
+  description: 用拟合散点和回归指标评估 HANTS 时间序列重建的最佳参数组合。
+  keywords:
+  - HANTS
+  - 参数选择
+  - 遥感时间序列
+  - 拟合评估
+  - 优化
+  synonyms:
+  - HANTS调参图
+  - 参数优化图
+  - 遥感重建评估
+  use_cases:
+  - 选择HANTS谐波分析的最佳参数
+  - 比较重建值与真实值拟合效果
+  - 评估遥感时间序列平滑质量
+  negative_keywords:
+  - 普通分类占比
+  - 相关热图
+  - 模型ROC对比
+  chart_type: parameter_selection_scatter
+  preview: templates/07_OPT_optimization_decision/07_OPT_001/assets/preview.png
+  code_path: templates/07_OPT_optimization_decision/07_OPT_001/HANTS最佳参数选择.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - GDAL
+  - pandas
+  - scipy
+  - tqdm
+- id: prd_multi_model_roc
+  name: 多模型二分类ROC曲线
+  category: prediction_evaluation
+  description: 用多模型 ROC 曲线比较二分类模型的判别能力和 AUC。
+  keywords:
+  - ROC曲线
+  - 二分类
+  - AUC
+  - 模型比较
+  synonyms:
+  - 受试者曲线
+  - 分类模型评估
+  - 多模型ROC
+  use_cases:
+  - 比较多个二分类模型性能
+  - 展示验证集AUC和灵敏度特异度关系
+  - 选择分类效果最好的模型
+  negative_keywords:
+  - 回归拟合
+  - 空间栅格
+  - 组成比例图
+  chart_type: roc_curve
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_001/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_001/多模型二分类ROC曲线.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - scikit-learn
+- id: prd_multi_model_regression_fit
+  name: 多模型回归拟合对比图
+  category: prediction_evaluation
+  description: 用多面板预测-实测散点图比较多个回归模型拟合效果。
+  keywords:
+  - 回归评估
+  - 预测实测
+  - 多模型比较
+  - R2
+  - RMSE
+  synonyms:
+  - 拟合散点图
+  - 预测值对真实值
+  - 回归模型对比
+  use_cases:
+  - 比较多个机器学习回归模型的预测精度
+  - 展示训练或测试集拟合散点
+  - 报告R2、RMSE等指标
+  negative_keywords:
+  - 分类ROC
+  - 组成占比
+  - 相关网络
+  chart_type: regression_fit_grid
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_002/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_002/多模型回归拟合对比图.py
+  dependencies:
+  - pillow
+  - joblib
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - statsmodels
+- id: prd_regression_learning_curve
+  name: 多模型回归学习曲线与预测评估
+  category: prediction_evaluation
+  description: 用学习曲线和预测评估面板展示多模型回归的训练样本效应与泛化性能。
+  keywords:
+  - 学习曲线
+  - 回归评估
+  - 多模型
+  - 泛化能力
+  - SHAP
+  synonyms:
+  - 训练曲线
+  - 样本量曲线
+  - 模型学习效果图
+  use_cases:
+  - 比较不同训练样本量下模型性能
+  - 判断模型是否随样本增加而提升
+  - 结合预测评估和解释性结果
+  negative_keywords:
+  - 静态组成比例
+  - 空间栅格
+  - 单组箱线图
+  chart_type: learning_curve
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_003/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_003/多模型回归学习曲线与预测评估.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - shap
+  - scikit-learn
+  - xgboost
+- id: prd_grouped_regression_fit
+  name: 多组别回归拟合图
+  category: prediction_evaluation
+  description: 用分组预测-实测散点图比较训练集和验证集的回归拟合一致性。
+  keywords:
+  - 分组回归
+  - 预测实测
+  - 训练验证
+  - 拟合线
+  synonyms:
+  - 训练验证拟合图
+  - 分组散点回归
+  - 回归校准图
+  use_cases:
+  - 同时展示训练集和验证集拟合效果
+  - 比较不同组别回归预测表现
+  - 报告拟合线和误差范围
+  negative_keywords:
+  - 二分类AUC
+  - 相关热图
+  - 集合交集
+  chart_type: regression_fit_scatter
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_004/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_004/多组别回归拟合图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+- id: prd_regression_evaluation_panels
+  name: 回归预测评估多面板图
+  category: prediction_evaluation
+  description: 用多面板预测散点、残差和边缘分布综合评估多个回归模型。
+  keywords:
+  - 回归预测
+  - 残差分析
+  - 边缘分布
+  - 多面板评估
+  synonyms:
+  - 回归诊断图
+  - 预测评估报告
+  - 模型残差面板
+  use_cases:
+  - 全面评估回归模型预测误差和偏差
+  - 比较多个目标或模型的拟合质量
+  - 展示残差、分布和预测-实测关系
+  negative_keywords:
+  - 分类ROC
+  - 三元图
+  - 环形占比
+  chart_type: regression_diagnostic_grid
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_005/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_005/回归预测评估多面板图.py
+  dependencies:
+  - pillow
+  - joblib
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+- id: prd_taylor_diagram
+  name: 泰勒图
+  category: prediction_evaluation
+  description: 用泰勒图同时比较模型的相关系数、标准差和中心化误差。
+  keywords:
+  - 泰勒图
+  - 模型性能
+  - 标准差
+  - 相关系数
+  - RMSE
+  synonyms:
+  - Taylor diagram
+  - 模型综合评估图
+  - 标准差相关图
+  use_cases:
+  - 比较多个模型与观测值的一致性
+  - 在一个坐标系中展示相关性和误差
+  - 评估模拟结果的综合性能
+  negative_keywords:
+  - 分类概率
+  - 组成比例
+  - 空间驱动因子
+  chart_type: taylor_diagram
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_006/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_006/泰勒图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - SkillMetrics
+  - scikit-learn
+- id: prd_voting_ensemble_learning_curve
+  name: 投票集成学习验证图
+  category: prediction_evaluation
+  description: 用学习曲线评估投票集成模型在不同训练样本量下的表现。
+  keywords:
+  - 投票集成
+  - 学习曲线
+  - 模型验证
+  - R2
+  synonyms:
+  - 集成学习验证图
+  - Voting模型曲线
+  - 训练样本曲线
+  use_cases:
+  - 验证投票集成模型是否随样本量增加而稳定提升
+  - 比较训练和验证性能差距
+  - 评估集成模型泛化能力
+  negative_keywords:
+  - 相关矩阵
+  - 空间地图
+  - 箱线分布
+  chart_type: learning_curve
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_007/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_007/投票集成学习验证图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - shap
+  - scikit-learn
+  - xgboost
+- id: prd_xgboost_binary_shap
+  name: XGBoost二分类评估图
+  category: prediction_evaluation
+  description: 用 XGBoost 二分类 SHAP 瀑布或贡献图解释单个样本的分类驱动因素。
+  keywords:
+  - XGBoost
+  - 二分类
+  - SHAP
+  - 特征贡献
+  - 模型解释
+  synonyms:
+  - XGB二分类解释图
+  - 单样本SHAP
+  - 分类贡献图
+  use_cases:
+  - 解释二分类模型对某个样本的预测原因
+  - 展示特征如何推高或降低分类结果
+  - 评估XGBoost分类模型的可解释性
+  negative_keywords:
+  - 回归拟合曲线
+  - 组成占比
+  - 空间栅格
+  chart_type: shap_waterfall
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_008/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_008/XGBoost二分类评估图.py
+  dependencies:
+  - pillow
+  - joblib
+  - matplotlib
+  - numpy
+  - pandas
+  - seaborn
+  - shap
+  - scikit-learn
+  - xgboost
+- id: prd_xgboost_multiclass_shap
+  name: XGBoost多分类评估图
+  category: prediction_evaluation
+  description: 用 XGBoost 多分类 SHAP 散点图展示特征对类别判别的影响。
+  keywords:
+  - XGBoost
+  - 多分类
+  - SHAP依赖
+  - 分类解释
+  synonyms:
+  - XGB多分类解释图
+  - 多类别SHAP
+  - 分类特征效应图
+  use_cases:
+  - 解释多分类模型中特征对类别概率的影响
+  - 展示单个关键特征与SHAP值关系
+  - 分析分类边界的驱动变量
+  negative_keywords:
+  - 二分类ROC
+  - 简单箱线图
+  - 集合韦恩图
+  chart_type: shap_dependence_scatter
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_009/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_009/XGBoost多分类评估图.py
+  dependencies:
+  - pillow
+  - joblib
+  - matplotlib
+  - numpy
+  - pandas
+  - seaborn
+  - shap
+  - scikit-learn
+  - xgboost
+- id: prd_xgboost_regression_ale_heatmap
+  name: XGBoost回归预测评估图
+  category: prediction_evaluation
+  description: 用 XGBoost 回归解释图展示双变量 ALE 或响应面的预测效应。
+  keywords:
+  - XGBoost
+  - 回归预测
+  - ALE
+  - 热力图
+  - 特征效应
+  synonyms:
+  - XGB回归解释图
+  - ALE热图
+  - 回归响应面
+  use_cases:
+  - 解释两个特征共同影响回归预测的模式
+  - 展示非线性特征效应区域
+  - 评估XGBoost回归模型预测机制
+  negative_keywords:
+  - 分类AUC
+  - 组成比例
+  - PCoA排序
+  chart_type: ale_heatmap
+  preview: templates/08_PRD_prediction_evaluation/08_PRD_010/assets/preview.png
+  code_path: templates/08_PRD_prediction_evaluation/08_PRD_010/XGBoost回归预测评估图.py
+  dependencies:
+  - pillow
+  - PyALE
+  - joblib
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - shap
+  - scikit-learn
+  - xgboost
+- id: rel_lollipop_bubble_coefficients
+  name: 棒棒糖气泡图
+  category: relationship_correlation
+  description: 用棒棒糖气泡图展示标准化回归系数或变量效应大小。
+  keywords:
+  - 棒棒糖图
+  - 气泡图
+  - 回归系数
+  - 效应大小
+  synonyms:
+  - lollipop图
+  - 系数图
+  - 变量效应图
+  use_cases:
+  - 比较多个自变量的标准化系数
+  - 展示效应方向和大小
+  - 按模型或主题分组呈现变量贡献
+  negative_keywords:
+  - 时间序列预测
+  - 空间栅格
+  - 组成占比
+  chart_type: lollipop_bubble_chart
+  preview: templates/09_REL_relationship_correlation/09_REL_001/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_001/棒棒糖气泡图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: rel_radial_effect_chart
+  name: 环形效应图
+  category: relationship_correlation
+  description: 用环形效应图展示不同变量在多组中的标准化效应方向与大小。
+  keywords:
+  - 环形效应图
+  - 标准化效应
+  - 径向条形
+  - 变量关系
+  synonyms:
+  - 圆形效应图
+  - 径向影响图
+  - 效应玫瑰图
+  use_cases:
+  - 展示多个变量对目标的正负效应
+  - 比较不同组别的效应强弱
+  - 需要极坐标表达效应方向
+  negative_keywords:
+  - 相关矩阵热图
+  - 分类模型ROC
+  - 空间地图
+  chart_type: radial_effect_chart
+  preview: templates/09_REL_relationship_correlation/09_REL_002/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_002/环形效应图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: rel_multilayer_encoded_correlation_heatmap
+  name: 多层编码相关性热图
+  category: relationship_correlation
+  description: 用多层编码热图同时展示相关系数、显著性和分类属性。
+  keywords:
+  - 相关性热图
+  - 多层编码
+  - 显著性
+  - 分类注释
+  synonyms:
+  - 编码相关图
+  - 多信息热图
+  - 相关矩阵增强图
+  use_cases:
+  - 在相关矩阵中同时表达方向、大小和显著性
+  - 比较多类变量之间的相关结构
+  - 需要图形符号编码额外属性
+  negative_keywords:
+  - 时间曲线
+  - 三维曲面
+  - 集合交集
+  chart_type: encoded_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_003/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_003/多层编码相关性热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+- id: rel_network_correlation_heatmap
+  name: 组合式相关性网络热力图
+  category: relationship_correlation
+  description: 用相关性热图和网络连线组合展示变量群之间的关联结构。
+  keywords:
+  - 相关性网络
+  - 热力图
+  - 连接线
+  - 变量关系
+  synonyms:
+  - 网络热图
+  - 相关网络图
+  - 矩阵网络组合图
+  use_cases:
+  - 展示不同变量组间的显著相关关系
+  - 同时保留矩阵数值和网络结构
+  - 识别核心变量或模块关系
+  negative_keywords:
+  - 单变量柱状图
+  - ROC曲线
+  - 三元比例
+  chart_type: correlation_network_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_004/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_004/组合式相关性网络热力图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - scipy
+- id: rel_diagonal_split_triangular_heatmap
+  name: 图双变量对角线分割组合三角热图
+  category: relationship_correlation
+  description: 用对角线分割三角热图在同一单元中展示双变量关系的两类编码。
+  keywords:
+  - 三角热图
+  - 对角线分割
+  - 双变量编码
+  - 相关性
+  synonyms:
+  - 分割热图
+  - 双编码热力图
+  - 三角相关图
+  use_cases:
+  - 同时展示两个相关指标或两套条件下的关系强度
+  - 比较干旱同步性等变量对之间的差异
+  - 需要上三角/下三角分区表达
+  negative_keywords:
+  - 时间序列曲线
+  - 模型学习曲线
+  - 组成饼图
+  chart_type: split_triangular_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_005/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_005/图双变量对角线分割组合三角热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: rel_scatter_error_colormap_regression
+  name: 带有误差棒、颜色映射和线性回归线的散点图
+  category: relationship_correlation
+  description: 用带误差棒、颜色映射和线性回归线的散点图展示两个趋势变量的关系。
+  keywords:
+  - 散点回归
+  - 误差棒
+  - 颜色映射
+  - 线性回归
+  synonyms:
+  - 带误差散点图
+  - 回归关系图
+  - 趋势相关散点图
+  use_cases:
+  - 分析两个连续变量趋势之间的线性关系
+  - 同时表达误差和第三变量编码
+  - 展示斜率、相关系数和显著性
+  negative_keywords:
+  - 多类别占比
+  - 韦恩图
+  - 三维柱状图
+  chart_type: scatter_regression
+  preview: templates/09_REL_relationship_correlation/09_REL_006/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_006/带有误差棒、颜色映射和线性回归线的散点图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+- id: rel_fdr_correlation_heatmap
+  name: FDR校正相关性分析图
+  category: relationship_correlation
+  description: 用 FDR 校正后的相关性热图展示多变量显著相关关系。
+  keywords:
+  - FDR校正
+  - 相关性热图
+  - 多重检验
+  - 显著性
+  synonyms:
+  - 校正相关图
+  - FDR热图
+  - 显著相关矩阵
+  use_cases:
+  - 进行大规模相关分析并控制假阳性
+  - 展示校正后仍显著的相关关系
+  - 比较多个指标间的Pearson或Spearman相关
+  negative_keywords:
+  - 时间序列趋势
+  - 模型预测曲线
+  - 组成占比
+  chart_type: correlation_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_007/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_007/FDR校正相关性分析图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+  - statsmodels
+- id: rel_circular_grouped_correlation_heatmap
+  name: 环状相关性热图-带有分组标注
+  category: relationship_correlation
+  description: 用环状分组相关性热图展示变量分组、相关强度和显著性。
+  keywords:
+  - 环状热图
+  - 分组标注
+  - 相关性
+  - 显著性
+  synonyms:
+  - 圆形相关热图
+  - 分组环图
+  - 环形矩阵图
+  use_cases:
+  - 展示多个变量组之间的相关性结构
+  - 需要圆形布局和分组色带
+  - 突出变量类别和相关强度
+  negative_keywords:
+  - 单一回归散点
+  - 空间栅格
+  - ROC曲线
+  chart_type: circular_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_008/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_008/环状相关性热图-带有分组标注.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+- id: rel_grouped_correlation_heatmap
+  name: 分组相关性热图
+  category: relationship_correlation
+  description: 用分组矩阵热图展示变量组内和组间的相关性格局。
+  keywords:
+  - 分组相关性
+  - 热图
+  - 组间关系
+  - 显著性
+  synonyms:
+  - 分组热图
+  - 相关矩阵图
+  - 变量组相关图
+  use_cases:
+  - 比较不同变量组之间的相关程度
+  - 展示显著相关单元和组别边界
+  - 用于相关性筛选和变量分组解释
+  negative_keywords:
+  - 三维表面
+  - 分类ROC
+  - 集合交集
+  chart_type: grouped_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_009/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_009/分组相关性热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+- id: rel_grouped_correlation_bubble_matrix
+  name: 分组相关性气泡矩阵
+  category: relationship_correlation
+  description: 用气泡矩阵展示分组相关系数、显著性和相关方向。
+  keywords:
+  - 气泡矩阵
+  - 分组相关
+  - 相关系数
+  - 显著性
+  synonyms:
+  - 相关气泡图
+  - bubble correlation
+  - 分组矩阵气泡图
+  use_cases:
+  - 用气泡大小表达相关强度
+  - 比较变量组之间的正负相关
+  - 展示显著性星号或颜色编码
+  negative_keywords:
+  - 时间序列
+  - 空间栅格
+  - 模型学习曲线
+  chart_type: bubble_matrix
+  preview: templates/09_REL_relationship_correlation/09_REL_010/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_010/分组相关性气泡矩阵.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - statsmodels
+- id: rel_bar_association_matrix
+  name: 横向条形图与关联矩阵组合图
+  category: relationship_correlation
+  description: 用横向条形图和关联矩阵组合展示单变量重要性与多变量关系。
+  keywords:
+  - 横向条形图
+  - 关联矩阵
+  - P值
+  - 组合图
+  synonyms:
+  - 条形矩阵组合
+  - 重要性关联图
+  - 柱状关联报告
+  use_cases:
+  - 同时展示变量排序和关联显著性
+  - 比较多个因子与多个响应的关系
+  - 制作相关分析摘要图
+  negative_keywords:
+  - 空间地图
+  - 三元比例
+  - ROC曲线
+  chart_type: bar_matrix_report
+  preview: templates/09_REL_relationship_correlation/09_REL_011/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_011/横向条形图与关联矩阵组合图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+- id: rel_interaction_bubble_matrix
+  name: 交互作用气泡图
+  category: relationship_correlation
+  description: 用交互作用气泡矩阵展示成对因子组合的增强或抑制效应。
+  keywords:
+  - 交互作用
+  - 气泡图
+  - 因子组合
+  - 增强效应
+  synonyms:
+  - 交互气泡图
+  - 因素交互矩阵
+  - 互作效应图
+  use_cases:
+  - 分析两个因子共同作用对结果的影响
+  - 展示增强、减弱或非线性交互类型
+  - 比较多组因子组合的重要性
+  negative_keywords:
+  - 单变量趋势
+  - 相关热图
+  - 集合韦恩图
+  chart_type: interaction_bubble_matrix
+  preview: templates/09_REL_relationship_correlation/09_REL_012/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_012/交互作用气泡图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: rel_mantel_network_heatmap
+  name: Mantel网络相关热图
+  category: relationship_correlation
+  description: 用 Mantel 网络和相关热图组合展示距离矩阵或变量组之间的关联。
+  keywords:
+  - Mantel检验
+  - 相关热图
+  - 网络连线
+  - 距离矩阵
+  synonyms:
+  - Mantel图
+  - 矩阵网络图
+  - 生态相关网络
+  use_cases:
+  - 分析环境变量组与群落距离之间的关联
+  - 用连线粗细和颜色表达Mantel r与P值
+  - 展示变量相关矩阵和跨组关系
+  negative_keywords:
+  - 简单柱状排名
+  - 时间预测
+  - 分类ROC
+  chart_type: mantel_network_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_013/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_013/Mantel网络相关热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - scikit-bio
+- id: rel_multiclass_scatter_matrix
+  name: 多类别散点图矩阵
+  category: relationship_correlation
+  description: 用多类别散点图矩阵展示多变量两两关系、分布和组别差异。
+  keywords:
+  - 散点矩阵
+  - 多类别
+  - 边缘分布
+  - 相关系数
+  synonyms:
+  - pairplot
+  - 成对散点图
+  - 分类散点矩阵
+  use_cases:
+  - 探索多维连续变量在不同类别中的分布和关系
+  - 展示两两散点、回归和类别分离
+  - 用于鸢尾花等分类数据可视化
+  negative_keywords:
+  - 空间栅格
+  - ROC曲线
+  - 组成饼图
+  chart_type: scatter_matrix
+  preview: templates/09_REL_relationship_correlation/09_REL_014/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_014/多类别散点图矩阵.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+- id: rel_pearson_correlation_heatmap
+  name: Pearson相关性热图
+  category: relationship_correlation
+  description: 用 Pearson 相关性热图展示多变量线性相关强度和方向。
+  keywords:
+  - Pearson相关
+  - 相关性热图
+  - 线性相关
+  - 显著性
+  synonyms:
+  - 皮尔逊热图
+  - 相关矩阵
+  - 线性相关图
+  use_cases:
+  - 计算多个变量之间的Pearson相关系数
+  - 展示正负相关方向和强度
+  - 用于快速筛选线性相关变量
+  negative_keywords:
+  - 非线性GAM效应
+  - 空间栅格
+  - 三元比例
+  chart_type: correlation_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_015/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_015/Pearson相关性热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+- id: rel_petal_correlation_heatmap
+  name: 花瓣状相关性热图
+  category: relationship_correlation
+  description: 用花瓣状环形热图展示多组变量相关矩阵和分组注释。
+  keywords:
+  - 花瓣热图
+  - 环形相关
+  - 多组矩阵
+  - 分组注释
+  synonyms:
+  - 花瓣图
+  - 扇区相关热图
+  - 环形矩阵图
+  use_cases:
+  - 展示多套数据或多个材料类别的相关结构
+  - 需要分扇区展示相关矩阵
+  - 强调组别分区和颜色编码
+  negative_keywords:
+  - 单模型ROC
+  - 时间滞后
+  - 箱线图
+  chart_type: petal_heatmap
+  preview: templates/09_REL_relationship_correlation/09_REL_016/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_016/花瓣状相关性热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+- id: rel_grouped_regression_marginal_scatter
+  name: 带有边缘分布的多组回归拟合散点图
+  category: relationship_correlation
+  description: 用边缘分布和分组回归散点图展示两个变量的关系及组别差异。
+  keywords:
+  - 散点回归
+  - 边缘分布
+  - 分组拟合
+  - 置信区间
+  synonyms:
+  - 联合分布图
+  - 分组回归图
+  - 带边缘密度散点
+  use_cases:
+  - 分析两个连续变量的线性关系
+  - 比较不同组别的回归斜率和分布
+  - 同时展示散点、密度和拟合统计
+  negative_keywords:
+  - 多变量热图
+  - 空间地图
+  - 分类ROC
+  chart_type: joint_regression_plot
+  preview: templates/09_REL_relationship_correlation/09_REL_017/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_017/带有边缘分布的多组回归拟合散点图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+  - scikit-learn
+- id: rel_scatter_matrix_network
+  name: 散点矩阵与相关性网络图
+  category: relationship_correlation
+  description: 用散点矩阵和相关性网络组合展示多变量关系、密度和路径连接。
+  keywords:
+  - 散点矩阵
+  - 相关性网络
+  - 多变量关系
+  - 路径连接
+  synonyms:
+  - 矩阵网络组合图
+  - 变量关系报告
+  - pairplot网络图
+  use_cases:
+  - 同时展示变量两两散点和整体网络关系
+  - 分析变量组之间的相关路径
+  - 制作复杂相关性报告
+  negative_keywords:
+  - 单变量箱线图
+  - 三元组成
+  - 时间双轴图
+  chart_type: scatter_network_report
+  preview: templates/09_REL_relationship_correlation/09_REL_018/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_018/散点矩阵与相关性网络图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - seaborn
+- id: rel_pairplot_seamless_heatmap
+  name: 散点图矩阵与无缝相关性热图
+  category: relationship_correlation
+  description: 用散点矩阵与无缝相关性热图组合展示多变量关系和相关强度。
+  keywords:
+  - 散点矩阵
+  - 相关性热图
+  - 多变量探索
+  - pairplot
+  synonyms:
+  - 散点热图组合
+  - 成对关系矩阵
+  - pairplot相关图
+  use_cases:
+  - 探索多个变量的两两散点关系
+  - 在同一图版中展示相关系数热图
+  - 比较变量分布与相关结构
+  negative_keywords:
+  - 空间栅格
+  - 分类ROC
+  - 组成占比
+  chart_type: scatter_heatmap_matrix
+  preview: templates/09_REL_relationship_correlation/09_REL_019/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_019/散点图矩阵与无缝相关性热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - seaborn
+- id: rel_sem_effect_decomposition
+  name: 结构方程模型效应分解图
+  category: relationship_correlation
+  description: 用结构方程模型效应分解图展示直接、间接和总效应大小。
+  keywords:
+  - 结构方程模型
+  - 效应分解
+  - 直接效应
+  - 间接效应
+  - 总效应
+  synonyms:
+  - SEM效应图
+  - 路径效应分解
+  - 中介效应图
+  use_cases:
+  - 展示路径模型中变量对结果的直接和间接影响
+  - 比较不同因子的总效应贡献
+  - 解释结构方程模型结果
+  negative_keywords:
+  - 原始散点矩阵
+  - 空间栅格
+  - 二分类ROC
+  chart_type: effect_decomposition_bar_chart
+  preview: templates/09_REL_relationship_correlation/09_REL_020/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_020/结构方程模型效应分解图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: rel_network_radar_report
+  name: 相关性网络与雷达报告
+  category: relationship_correlation
+  description: 用相关性网络、矩阵和雷达图组合展示变量关系与综合指标轮廓。
+  keywords:
+  - 相关性网络
+  - 雷达图
+  - 矩阵热图
+  - 综合报告
+  synonyms:
+  - 网络雷达报告
+  - 相关性综合图
+  - 变量关系仪表板
+  use_cases:
+  - 同时展示变量相关网络和多指标表现
+  - 比较变量组的综合轮廓
+  - 制作关系分析多面板报告
+  negative_keywords:
+  - 单一分布图
+  - 空间栅格批处理
+  - ROC曲线
+  chart_type: network_radar_report
+  preview: templates/09_REL_relationship_correlation/09_REL_021/assets/preview.png
+  code_path: templates/09_REL_relationship_correlation/09_REL_021/相关性网络与雷达报告.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - statsmodels
+- id: sen_grouped_rf_shap
+  name: 按指标分组的随机森林SHAP分析图
+  category: sensitivity_robustness
+  description: 用分组 SHAP 条形/点图展示随机森林模型中不同指标组的贡献。
+  keywords:
+  - 随机森林
+  - SHAP
+  - 指标分组
+  - 特征重要性
+  synonyms:
+  - 分组SHAP图
+  - RF解释图
+  - 指标贡献图
+  use_cases:
+  - 按质量、公平或监管等指标组解释模型贡献
+  - 比较特征对输出的正负影响
+  - 展示随机森林特征重要性
+  negative_keywords:
+  - 无模型的相关热图
+  - 空间栅格
+  - 三元比例
+  chart_type: shap_summary_plot
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_001/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_001/按指标分组的随机森林SHAP分析图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+- id: sen_grouped_shap_top_features
+  name: 分组SHAP重要性与头部特征图
+  category: sensitivity_robustness
+  description: 用分组 SHAP 重要性条形图和头部特征占比展示关键变量贡献。
+  keywords:
+  - SHAP重要性
+  - 头部特征
+  - 分组贡献
+  - LightGBM
+  synonyms:
+  - Top SHAP图
+  - 特征重要性排序
+  - SHAP占比图
+  use_cases:
+  - 识别模型中贡献最高的特征
+  - 按特征类别汇总重要性
+  - 展示前若干变量的累计贡献
+  negative_keywords:
+  - 无监督聚类
+  - 空间地图
+  - 集合交集
+  chart_type: shap_bar_chart
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_002/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_002/分组SHAP重要性与头部特征图.py
+  dependencies:
+  - pillow
+  - lightgbm
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+- id: sen_shap_importance_dependence
+  name: SHAP特征重要性与依赖组合图
+  category: sensitivity_robustness
+  description: 用 SHAP 重要性、依赖散点和局部曲线组合展示特征效应。
+  keywords:
+  - SHAP
+  - 依赖图
+  - 特征重要性
+  - 非线性效应
+  synonyms:
+  - SHAP组合图
+  - 特征效应图
+  - 依赖散点报告
+  use_cases:
+  - 同时展示特征贡献排名和关键变量依赖关系
+  - 解释变量值变化如何影响预测
+  - 制作模型敏感性分析图
+  negative_keywords:
+  - 简单相关矩阵
+  - 组成比例
+  - 空间栅格
+  chart_type: shap_multi_panel_report
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_003/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_003/SHAP特征重要性与依赖组合图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - shap
+  - scikit-learn
+- id: sen_shap_importance_rose
+  name: SHAP重要性玫瑰图
+  category: sensitivity_robustness
+  description: 用 SHAP 重要性玫瑰图和蜂群图展示特征贡献方向与强度。
+  keywords:
+  - SHAP玫瑰图
+  - 特征重要性
+  - 蜂群图
+  - XGBoost
+  synonyms:
+  - SHAP极坐标图
+  - 贡献玫瑰图
+  - 特征重要性环图
+  use_cases:
+  - 用极坐标展示特征重要性排序
+  - 同时观察SHAP值分布和方向
+  - 解释XGBoost模型关键驱动因素
+  negative_keywords:
+  - 无模型数据分布
+  - 时间序列
+  - 空间地图
+  chart_type: shap_rose_chart
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_004/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_004/SHAP重要性玫瑰图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+  - xgboost
+- id: sen_gam_contour_heatmap
+  name: GAM非线性影响等高线热力图
+  category: sensitivity_robustness
+  description: 用 GAM 二维等高线热力图展示两个变量交互下的非线性响应。
+  keywords:
+  - GAM
+  - 等高线热力图
+  - 非线性影响
+  - 二维响应面
+  synonyms:
+  - GAM热图
+  - 非线性等值线
+  - 交互响应面
+  use_cases:
+  - 分析两个解释变量对响应变量的联合非线性影响
+  - 展示阈值区域和梯度变化
+  - 用于敏感性或响应面分析
+  negative_keywords:
+  - 线性相关矩阵
+  - 分类ROC
+  - 组成饼图
+  chart_type: contour_heatmap_grid
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_005/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_005/GAM非线性影响等高线热力图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - pygam
+  - scikit-learn
+- id: sen_gam_partial_residual
+  name: GAM偏依赖与残差分析图
+  category: sensitivity_robustness
+  description: 用 GAM 偏依赖曲线和残差诊断面板展示非线性拟合质量。
+  keywords:
+  - GAM
+  - 偏依赖
+  - 残差分析
+  - 非线性拟合
+  synonyms:
+  - GAM诊断图
+  - 平滑效应图
+  - 偏效应曲线
+  use_cases:
+  - 查看每个变量的GAM非线性效应
+  - 评估模型残差和拟合误差
+  - 展示平滑曲线和置信区间
+  negative_keywords:
+  - 组成比例图
+  - 空间栅格
+  - 韦恩图
+  chart_type: partial_dependence_grid
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_006/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_006/GAM偏依赖与残差分析图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - pygam
+  - scipy
+  - scikit-learn
+- id: sen_shap_dependence_distribution_threshold
+  name: SHAP依赖、分布与阈值效应图
+  category: sensitivity_robustness
+  description: 用 SHAP 依赖曲线、分布和阈值标注识别关键特征的响应拐点。
+  keywords:
+  - SHAP依赖
+  - 阈值效应
+  - 分布叠加
+  - 特征响应
+  synonyms:
+  - SHAP阈值图
+  - 依赖分布图
+  - 拐点分析图
+  use_cases:
+  - 识别变量值超过某阈值后对预测的影响变化
+  - 展示特征分布和SHAP响应曲线
+  - 分析敏感区间或风险阈值
+  negative_keywords:
+  - 简单占比图
+  - 分类ROC
+  - 空间移动窗口
+  chart_type: shap_dependence_grid
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_007/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_007/SHAP依赖、分布与阈值效应图.py
+  dependencies:
+  - pillow
+  - joblib
+  - lightgbm
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+- id: sen_shap_gam_feature_effects
+  name: SHAP–GAM特征效应图
+  category: sensitivity_robustness
+  description: 用 SHAP 与 GAM 曲线组合展示多个特征的平滑非线性效应。
+  keywords:
+  - SHAP-GAM
+  - 特征效应
+  - 平滑曲线
+  - 置信区间
+  synonyms:
+  - SHAP GAM图
+  - 非线性特征贡献
+  - 平滑SHAP效应图
+  use_cases:
+  - 用GAM拟合SHAP值随特征变化的趋势
+  - 比较多个特征的非线性贡献形态
+  - 展示正负效应和不确定性
+  negative_keywords:
+  - 相关矩阵
+  - 三元图
+  - 空间栅格
+  chart_type: shap_gam_effect_grid
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_008/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_008/SHAP–GAM特征效应图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - pygam
+  - scipy
+  - shap
+  - scikit-learn
+  - xgboost
+- id: sen_shap_interaction_dependence
+  name: SHAP重要性、依赖与交互效应图
+  category: sensitivity_robustness
+  description: 用 SHAP 重要性、依赖散点和交互颜色编码展示特征间交互效应。
+  keywords:
+  - SHAP交互
+  - 依赖图
+  - 特征重要性
+  - 交互效应
+  synonyms:
+  - SHAP互作图
+  - 交互依赖图
+  - 特征交互分析
+  use_cases:
+  - 分析某特征的SHAP值如何受另一特征调节
+  - 同时展示重要性排名和依赖散点
+  - 识别模型中的交互驱动因素
+  negative_keywords:
+  - 无监督聚类
+  - 空间地图
+  - 组成占比
+  chart_type: shap_interaction_scatter
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_009/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_009/SHAP重要性、依赖与交互效应图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+  - statsmodels
+  - xgboost
+- id: sen_shap_top_dependence_grid
+  name: SHAP重要性与头部依赖图
+  category: sensitivity_robustness
+  description: 用 SHAP 总结图和头部特征依赖小图展示关键变量的局部效应。
+  keywords:
+  - SHAP重要性
+  - 头部依赖
+  - 特征排序
+  - 局部效应
+  synonyms:
+  - Top依赖图
+  - SHAP依赖面板
+  - 特征贡献小图
+  use_cases:
+  - 先找出重要特征再逐个展示依赖关系
+  - 解释前若干变量对模型输出的影响
+  - 制作紧凑型SHAP报告
+  negative_keywords:
+  - 空间栅格分析
+  - 集合韦恩图
+  - 时间双轴图
+  chart_type: shap_dependence_grid
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_010/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_010/SHAP重要性与头部依赖图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - shap
+  - scikit-learn
+  - xgboost
+- id: sen_shap_interaction_network
+  name: SHAP交互特征网络图
+  category: sensitivity_robustness
+  description: 用网络图展示 SHAP 交互作用中变量之间的连接强度和方向。
+  keywords:
+  - SHAP交互
+  - 网络图
+  - 特征关系
+  - XGBoost
+  synonyms:
+  - SHAP网络
+  - 特征交互网络
+  - 互作关系图
+  use_cases:
+  - 识别特征之间强交互关系
+  - 用边宽和颜色表达交互强度
+  - 展示模型解释中的变量网络结构
+  negative_keywords:
+  - 单变量箱线图
+  - 空间栅格
+  - ROC曲线
+  chart_type: interaction_network
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_011/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_011/SHAP交互特征网络图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - networkx
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+  - xgboost
+- id: sen_shap_interaction_matrix_heatmap
+  name: SHAP交互作用矩阵热图
+  category: sensitivity_robustness
+  description: 用 SHAP 交互矩阵热图和小蜂群图展示成对特征互作模式。
+  keywords:
+  - SHAP交互矩阵
+  - 热图
+  - 蜂群
+  - 特征互作
+  synonyms:
+  - SHAP矩阵图
+  - 交互热力图
+  - 特征互作矩阵
+  use_cases:
+  - 比较所有特征对之间的交互强度
+  - 同时查看单个交互的SHAP分布
+  - 分析模型复杂互作结构
+  negative_keywords:
+  - 时间趋势
+  - 三元比例
+  - 空间地图
+  chart_type: interaction_matrix_heatmap
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_012/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_012/SHAP交互作用矩阵热图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+  - xgboost
+- id: sen_shap_pdp_combo
+  name: SHAP与PDP组合图
+  category: sensitivity_robustness
+  description: 用 SHAP 与 PDP 组合展示特征重要性和平均边际效应。
+  keywords:
+  - SHAP
+  - PDP
+  - 部分依赖
+  - 特征重要性
+  synonyms:
+  - SHAP PDP图
+  - 部分依赖组合图
+  - 模型解释报告
+  use_cases:
+  - 同时展示全局特征贡献和部分依赖趋势
+  - 解释模型对关键变量的平均响应
+  - 比较不同特征的边际影响
+  negative_keywords:
+  - 相关热图
+  - 空间栅格
+  - 集合韦恩图
+  chart_type: shap_pdp_report
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_013/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_013/SHAP与PDP组合图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+- id: sen_multi_target_shap_polynomial_fit
+  name: 多目标SHAP多项式拟合图
+  category: sensitivity_robustness
+  description: 用多目标 SHAP 多项式拟合图展示不同目标下特征效应曲线和拟合优度。
+  keywords:
+  - 多目标SHAP
+  - 多项式拟合
+  - 特征效应
+  - CatBoost
+  synonyms:
+  - 多目标解释图
+  - SHAP拟合曲线
+  - 多输出特征效应
+  use_cases:
+  - 比较同一特征对多个目标变量的影响曲线
+  - 展示多项式拟合和调整R2
+  - 解释多目标模型的敏感性差异
+  negative_keywords:
+  - 简单分布图
+  - 空间移动窗口
+  - 分类ROC
+  chart_type: shap_polynomial_fit
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_014/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_014/多目标SHAP多项式拟合图.py
+  dependencies:
+  - pillow
+  - catboost
+  - joblib
+  - matplotlib
+  - numpy
+  - pandas
+  - seaborn
+  - shap
+  - scikit-learn
+  - statsmodels
+- id: sen_2d_pdp_contour
+  name: 2维PDP
+  category: sensitivity_robustness
+  description: 用二维 PDP 等高线图展示两特征交互对模型预测的平均影响。
+  keywords:
+  - 二维PDP
+  - 部分依赖
+  - 等高线
+  - 特征交互
+  synonyms:
+  - 2D部分依赖图
+  - PDP等高线
+  - 双变量响应面
+  use_cases:
+  - 分析两个变量共同变化时模型预测如何响应
+  - 展示特征交互的非线性区域
+  - 用于敏感性和阈值分析
+  negative_keywords:
+  - 单变量排序
+  - 相关网络
+  - 空间栅格批处理
+  chart_type: 2d_partial_dependence_contour
+  preview: templates/10_SEN_sensitivity_robustness/10_SEN_015/assets/preview.png
+  code_path: templates/10_SEN_sensitivity_robustness/10_SEN_015/2维PDP.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+  - xgboost
+- id: spa_pixelwise_standardized_regression
+  name: 逐像元标准化与多元线性回归
+  category: spatial_geographic
+  description: 用逐像元标准化和多元线性回归计算栅格时间序列的驱动系数与主导因子。
+  keywords:
+  - 逐像元回归
+  - 栅格
+  - 标准化
+  - 多元线性回归
+  - 主导因子
+  synonyms:
+  - 像元回归
+  - 遥感回归制图
+  - 空间驱动分析
+  use_cases:
+  - 对多年栅格数据逐像元建立回归模型
+  - 输出各因子系数、显著性或主导因子栅格
+  - 分析遥感变量对目标变量的空间影响
+  negative_keywords:
+  - 普通论文统计图
+  - 二分类ROC
+  - 组成比例图
+  chart_type: geospatial_raster_analysis
+  preview: templates/11_SPA_spatial_geographic/11_SPA_001/assets/preview.png
+  code_path: templates/11_SPA_spatial_geographic/11_SPA_001/逐像元标准化与多元线性回归.py
+  dependencies:
+  - pillow
+  - numpy
+  - rasterio
+  - scikit-learn
+  - tqdm
+- id: spa_moving_window_partial_correlation
+  name: 空间移动窗口偏相关栅格
+  category: spatial_geographic
+  description: 用空间移动窗口偏相关分析计算栅格变量在局部邻域中的相关关系。
+  keywords:
+  - 移动窗口
+  - 偏相关
+  - 栅格分析
+  - 局部相关
+  synonyms:
+  - 窗口偏相关
+  - 空间相关栅格
+  - 局部相关分析
+  use_cases:
+  - 分析遥感变量与目标变量的局部偏相关
+  - 控制其他变量后输出相关系数栅格
+  - 研究空间异质性和局部驱动关系
+  negative_keywords:
+  - 普通相关热图
+  - 模型ROC曲线
+  - 三元图
+  chart_type: geospatial_moving_window_analysis
+  preview: templates/11_SPA_spatial_geographic/11_SPA_002/assets/preview.png
+  code_path: templates/11_SPA_spatial_geographic/11_SPA_002/空间移动窗口偏相关栅格.py
+  dependencies:
+  - pillow
+  - joblib
+  - numpy
+  - GDAL
+  - pandas
+  - pingouin
+  - tqdm
+- id: spa_moving_window_rf_shap_drivers
+  name: 空间移动窗口随机森林与SHAP驱动因子分析
+  category: spatial_geographic
+  description: 用空间移动窗口随机森林和 SHAP 识别栅格时间序列中的局部主导驱动因子。
+  keywords:
+  - 移动窗口
+  - 随机森林
+  - SHAP
+  - 栅格
+  - 驱动因子
+  synonyms:
+  - 空间RF-SHAP
+  - 局部驱动因子分析
+  - 遥感窗口模型
+  use_cases:
+  - 在每个空间窗口训练随机森林并解释驱动变量
+  - 输出局部重要性或主导因子栅格
+  - 分析驱动机制的空间异质性
+  negative_keywords:
+  - 简单箱线图
+  - 三维柱状图
+  - 集合韦恩图
+  chart_type: geospatial_ml_shap_analysis
+  preview: templates/11_SPA_spatial_geographic/11_SPA_003/assets/preview.png
+  code_path: templates/11_SPA_spatial_geographic/11_SPA_003/空间移动窗口随机森林与SHAP驱动因子分析.py
+  dependencies:
+  - pillow
+  - numpy
+  - pandas
+  - rasterio
+  - shap
+  - scikit-learn
+  - tqdm
+- id: spa_xgboost_geoshapley
+  name: XGBoost与GeoShapley解释图
+  category: spatial_geographic
+  description: 用 XGBoost 与 GeoShapley 解释空间坐标和环境变量对预测结果的贡献。
+  keywords:
+  - XGBoost
+  - GeoShapley
+  - 空间解释
+  - SHAP
+  - 特征贡献
+  synonyms:
+  - 空间SHAP
+  - GeoShapley解释图
+  - 地理机器学习解释
+  use_cases:
+  - 解释空间模型中地理位置和环境变量的贡献
+  - 比较普通SHAP和空间Shapley效应
+  - 分析空间异质性对预测的影响
+  negative_keywords:
+  - 普通时间序列
+  - 韦恩图
+  - 占比饼图
+  chart_type: geoshapley_explanation_plot
+  preview: templates/11_SPA_spatial_geographic/11_SPA_004/assets/preview.png
+  code_path: templates/11_SPA_spatial_geographic/11_SPA_004/XGBoost与GeoShapley解释图.py
+  dependencies:
+  - pillow
+  - geoshapley
+  - matplotlib
+  - numpy
+  - pandas
+  - shap
+  - scikit-learn
+  - xgboost
+- id: trd_dual_axis_bar_line
+  name: 双Y轴柱状折线时间序列图
+  category: trend_time_series
+  description: 用双 Y 轴柱状折线图同时展示容量类指标和功率类指标的时间变化。
+  keywords:
+  - 双Y轴
+  - 柱状折线
+  - 时间序列
+  - 容量功率
+  synonyms:
+  - 双轴图
+  - 柱线组合图
+  - 时间序列组合图
+  use_cases:
+  - 同时展示两个量纲不同的时间序列指标
+  - 用柱形和折线比较容量与功率变化
+  - 分析储能或资源调度随时间变化
+  negative_keywords:
+  - 相关矩阵
+  - 空间栅格
+  - SHAP解释
+  chart_type: dual_axis_bar_line_chart
+  preview: templates/12_TRD_trend_time_series/12_TRD_001/assets/preview.png
+  code_path: templates/12_TRD_trend_time_series/12_TRD_001/双Y轴柱状折线时间序列图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+- id: trd_lag_correlation_analysis
+  name: 滞后相关性分析图
+  category: trend_time_series
+  description: 用滞后相关性曲线分析遥感变量相对目标变量的最佳滞后时间。
+  keywords:
+  - 滞后相关
+  - 时间序列
+  - 最佳滞后
+  - 相关系数
+  synonyms:
+  - lag相关图
+  - 时滞分析
+  - 滞后效应图
+  use_cases:
+  - 寻找两个时间序列之间相关性最高的滞后期
+  - 比较多个遥感指标的滞后响应
+  - 分析气温、遥感或环境变量的延迟效应
+  negative_keywords:
+  - 空间栅格回归
+  - 分类ROC
+  - 组成占比
+  chart_type: lag_correlation_line_chart
+  preview: templates/12_TRD_trend_time_series/12_TRD_002/assets/preview.png
+  code_path: templates/12_TRD_trend_time_series/12_TRD_002/滞后相关性分析图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - pandas
+- id: trd_smoothed_trend_curves
+  name: 平滑趋势曲线
+  category: trend_time_series
+  description: 用平滑折线图展示多个地区或类别随年份变化的趋势曲线。
+  keywords:
+  - 平滑曲线
+  - 时间趋势
+  - 多组折线
+  - 样条插值
+  synonyms:
+  - 趋势曲线
+  - 平滑折线
+  - 多地区时间线
+  use_cases:
+  - 展示多个地区随时间变化的平滑趋势
+  - 比较不同类别的年度变化形态
+  - 需要保留标记并平滑连接
+  negative_keywords:
+  - 相关热图
+  - 空间地图
+  - 模型ROC
+  chart_type: smoothed_line_chart_grid
+  preview: templates/12_TRD_trend_time_series/12_TRD_003/assets/preview.png
+  code_path: templates/12_TRD_trend_time_series/12_TRD_003/平滑趋势曲线.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - numpy
+  - scipy
+- id: trd_composite_line_bar_dual_axis
+  name: 折线图、条形图和双Y轴的复合时间序列图
+  category: trend_time_series
+  description: 用折线、条形和双 Y 轴组合展示森林、草地等时序指标及趋势统计。
+  keywords:
+  - 复合时间序列
+  - 折线图
+  - 条形图
+  - 双Y轴
+  - 趋势回归
+  synonyms:
+  - 柱线双轴复合图
+  - 多指标时间序列
+  - 趋势统计图
+  use_cases:
+  - 同时展示多个土地类型或指标的年度趋势
+  - 用条形表达辅助变量并叠加折线趋势
+  - 需要回归斜率和显著性说明
+  negative_keywords:
+  - 相关矩阵
+  - 三元组成
+  - 空间移动窗口
+  chart_type: composite_time_series_chart
+  preview: templates/12_TRD_trend_time_series/12_TRD_004/assets/preview.png
+  code_path: templates/12_TRD_trend_time_series/12_TRD_004/折线图、条形图和双Y轴的复合时间序列图.py
+  dependencies:
+  - pillow
+  - matplotlib
+  - pandas
+  - scipy

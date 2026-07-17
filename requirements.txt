@@ -1,0 +1,16 @@
+# Core dependencies for the Skill orchestration code.
+# Template-specific plotting/modeling libraries are detected and installed on demand
+# after a final template is selected.
+langchain-core>=0.3,<2
+pydantic>=2,<3
+PyYAML>=6,<7
+pandas>=2,<4
+numpy>=1.26
+pillow>=10
+openpyxl>=3.1
+xlrd>=2.0
+matplotlib>=3.8
+
+# Developer/test/evaluation helpers.
+pytest>=8,<9
+ruff>=0.15

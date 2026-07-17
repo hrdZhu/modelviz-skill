@@ -1,0 +1,26 @@
+.env
+.env.*
+*.log
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+
+workspace/*
+!workspace/.gitkeep
+
+outputs/*
+!outputs/.gitkeep
+
+evals/runtime/
+
+# Local development notes and private drafts.
+开发日志.docx

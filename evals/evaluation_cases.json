@@ -1,0 +1,403 @@
+{
+  "requirement_cases": [
+    {
+      "id": "req_trend_unspecified_chart",
+      "input": "帮我展示不同年份产量的变化趋势，论文正文用，简洁科研风。",
+      "requirement": {
+        "goal": "展示时间趋势",
+        "functional_keywords": ["趋势"],
+        "chart_types": [],
+        "style_keywords": ["科研风", "简洁"],
+        "use_case": "论文正文",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_explicit_radar",
+      "input": "做一个雷达图比较三个方案的综合指标，用于答辩展示。",
+      "requirement": {
+        "goal": "比较方案综合指标",
+        "functional_keywords": ["比较"],
+        "chart_types": ["radar_chart"],
+        "style_keywords": [],
+        "use_case": "答辩展示",
+        "negative_requirements": [],
+        "explicit_template": true,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_negative_3d",
+      "input": "比较各地区得分，别用三维，最好低饱和一点。",
+      "requirement": {
+        "goal": "比较各地区得分",
+        "functional_keywords": ["比较"],
+        "chart_types": [],
+        "style_keywords": ["低饱和"],
+        "use_case": "",
+        "negative_requirements": ["不要三维"],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_regression_prediction",
+      "input": "画预测值和真实值的回归拟合散点图，展示模型评价效果。",
+      "requirement": {
+        "goal": "展示预测值和真实值拟合效果",
+        "functional_keywords": ["预测评估", "回归"],
+        "chart_types": ["regression_fit_scatter"],
+        "style_keywords": [],
+        "use_case": "模型评价",
+        "negative_requirements": [],
+        "explicit_template": true,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_roc",
+      "input": "用ROC曲线比较几个二分类模型的AUC。",
+      "requirement": {
+        "goal": "比较二分类模型AUC",
+        "functional_keywords": ["分类评估", "比较"],
+        "chart_types": ["roc_curve"],
+        "style_keywords": [],
+        "use_case": "模型评价",
+        "negative_requirements": [],
+        "explicit_template": true,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_correlation_heatmap",
+      "input": "分析多个指标之间的相关性，画相关性热图。",
+      "requirement": {
+        "goal": "分析指标相关性",
+        "functional_keywords": ["相关性"],
+        "chart_types": ["correlation_heatmap"],
+        "style_keywords": [],
+        "use_case": "关系探索",
+        "negative_requirements": [],
+        "explicit_template": true,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_violin_significance",
+      "input": "展示不同处理组的分布差异和显著性，最好用小提琴图。",
+      "requirement": {
+        "goal": "展示组间分布差异和显著性",
+        "functional_keywords": ["分布", "显著性"],
+        "chart_types": ["violin_plot_grid"],
+        "style_keywords": [],
+        "use_case": "组间差异",
+        "negative_requirements": [],
+        "explicit_template": true,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_shap",
+      "input": "我想解释随机森林模型里哪些变量最重要，做SHAP科研图。",
+      "requirement": {
+        "goal": "解释模型变量重要性",
+        "functional_keywords": ["模型解释"],
+        "chart_types": ["shap_summary_plot"],
+        "style_keywords": ["科研风"],
+        "use_case": "模型解释",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_spatial",
+      "input": "展示空间栅格回归结果和驱动因子解释。",
+      "requirement": {
+        "goal": "展示空间回归和驱动因子解释",
+        "functional_keywords": ["空间分析", "模型解释"],
+        "chart_types": [],
+        "style_keywords": [],
+        "use_case": "空间分析",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_optimization",
+      "input": "帮我选择最佳参数，展示参数敏感性和最优点。",
+      "requirement": {
+        "goal": "展示参数选择和敏感性",
+        "functional_keywords": ["优化决策", "敏感性"],
+        "chart_types": [],
+        "style_keywords": [],
+        "use_case": "模型评价",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_multi_panel_report",
+      "input": "把模型误差、变量重要性和相关性放在一张组合报告图里。",
+      "requirement": {
+        "goal": "组合展示模型误差、变量重要性和相关性",
+        "functional_keywords": ["多面板", "模型解释", "相关性", "不确定性"],
+        "chart_types": ["multi_panel_report"],
+        "style_keywords": [],
+        "use_case": "模型评价",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_pca",
+      "input": "对多个指标做PCA降维，并展示主成分和变量关系。",
+      "requirement": {
+        "goal": "展示PCA降维和变量关系",
+        "functional_keywords": ["聚类降维", "相关性"],
+        "chart_types": [],
+        "style_keywords": [],
+        "use_case": "变量筛选",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_distribution_missing",
+      "input": "我的数据有缺失值，想看各组指标分布和误差范围。",
+      "requirement": {
+        "goal": "展示各组指标分布和误差",
+        "functional_keywords": ["分布", "不确定性"],
+        "chart_types": [],
+        "style_keywords": [],
+        "use_case": "组间差异",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_style_only",
+      "input": "帮我画一张高级科研图。",
+      "requirement": {
+        "goal": "",
+        "functional_keywords": [],
+        "chart_types": [],
+        "style_keywords": ["科研风"],
+        "use_case": "",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": true,
+        "clarification_question": "请说明你想展示的分析目标、数据关系或图表类型。"
+      }
+    },
+    {
+      "id": "req_low_saturation_only",
+      "input": "要低饱和、简洁、论文风一点。",
+      "requirement": {
+        "goal": "",
+        "functional_keywords": [],
+        "chart_types": [],
+        "style_keywords": ["低饱和", "简洁", "科研风"],
+        "use_case": "论文正文",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": true,
+        "clarification_question": "请说明你想展示的分析目标、数据关系或图表类型。"
+      }
+    },
+    {
+      "id": "req_category_numeric",
+      "input": "比较不同地区的产值和成本，做成报告里能看的图。",
+      "requirement": {
+        "goal": "比较地区产值和成本",
+        "functional_keywords": ["比较"],
+        "chart_types": [],
+        "style_keywords": [],
+        "use_case": "论文正文",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_multiple_needs",
+      "input": "既要看年度趋势，也要比较不同模型误差，不要雷达图。",
+      "requirement": {
+        "goal": "展示年度趋势并比较模型误差",
+        "functional_keywords": ["趋势", "比较", "不确定性"],
+        "chart_types": [],
+        "style_keywords": [],
+        "use_case": "模型评价",
+        "negative_requirements": ["不要雷达图"],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_no_pie",
+      "input": "展示类别占比，但不要饼图和圆环图。",
+      "requirement": {
+        "goal": "展示类别占比",
+        "functional_keywords": ["组成占比"],
+        "chart_types": [],
+        "style_keywords": [],
+        "use_case": "",
+        "negative_requirements": ["不要饼图", "不要环形图"],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_network",
+      "input": "展示变量之间的关联网络和交互关系。",
+      "requirement": {
+        "goal": "展示变量关联网络",
+        "functional_keywords": ["网络关系", "相关性"],
+        "chart_types": [],
+        "style_keywords": [],
+        "use_case": "关系探索",
+        "negative_requirements": [],
+        "explicit_template": false,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    },
+    {
+      "id": "req_taylor",
+      "input": "用泰勒图评价多个模型的模拟效果。",
+      "requirement": {
+        "goal": "评价多个模型模拟效果",
+        "functional_keywords": ["预测评估"],
+        "chart_types": ["taylor_diagram"],
+        "style_keywords": [],
+        "use_case": "模型评价",
+        "negative_requirements": [],
+        "explicit_template": true,
+        "is_ambiguous": false,
+        "clarification_question": ""
+      }
+    }
+  ],
+  "recall_cases": [
+    {
+      "id": "recall_trend",
+      "source_requirement_case": "req_trend_unspecified_chart",
+      "acceptable": {"categories": ["trend_time_series"]}
+    },
+    {
+      "id": "recall_radar",
+      "source_requirement_case": "req_explicit_radar",
+      "acceptable": {"chart_types": ["radar_chart", "network_radar_report"]}
+    },
+    {
+      "id": "recall_negative_3d",
+      "source_requirement_case": "req_negative_3d",
+      "acceptable": {"categories": ["comparison_ranking"], "exclude_chart_type_contains": ["3d"]}
+    },
+    {
+      "id": "recall_regression",
+      "source_requirement_case": "req_regression_prediction",
+      "acceptable": {"categories": ["prediction_evaluation"], "keywords_any": ["回归", "预测"]}
+    },
+    {
+      "id": "recall_roc",
+      "source_requirement_case": "req_roc",
+      "acceptable": {"chart_types": ["roc_curve"]}
+    },
+    {
+      "id": "recall_correlation_heatmap",
+      "source_requirement_case": "req_correlation_heatmap",
+      "acceptable": {"categories": ["relationship_correlation"], "keywords_any": ["相关性", "热图"]}
+    },
+    {
+      "id": "recall_violin",
+      "source_requirement_case": "req_violin_significance",
+      "acceptable": {"categories": ["distribution_uncertainty"], "keywords_any": ["小提琴", "显著性", "分布"]}
+    },
+    {
+      "id": "recall_shap",
+      "source_requirement_case": "req_shap",
+      "acceptable": {"categories": ["sensitivity_robustness"], "keywords_any": ["SHAP", "特征重要性"]}
+    },
+    {
+      "id": "recall_spatial",
+      "source_requirement_case": "req_spatial",
+      "acceptable": {"categories": ["spatial_geographic"]}
+    },
+    {
+      "id": "recall_optimization",
+      "source_requirement_case": "req_optimization",
+      "acceptable": {"categories": ["optimization_decision", "sensitivity_robustness"], "keywords_any": ["参数", "敏感性"]}
+    },
+    {
+      "id": "recall_multi_panel",
+      "source_requirement_case": "req_multi_panel_report",
+      "acceptable": {"categories": ["multi_panel_report"], "keywords_any": ["报告", "组合"]}
+    },
+    {
+      "id": "recall_pca",
+      "source_requirement_case": "req_pca",
+      "acceptable": {"categories": ["clustering_reduction"], "keywords_any": ["PCA", "主成分", "降维"]}
+    },
+    {
+      "id": "recall_distribution_missing",
+      "source_requirement_case": "req_distribution_missing",
+      "acceptable": {"categories": ["distribution_uncertainty"]}
+    },
+    {
+      "id": "recall_no_pie",
+      "source_requirement_case": "req_no_pie",
+      "acceptable": {"categories": ["comparison_ranking"], "exclude_chart_type_contains": ["donut", "circular"]}
+    },
+    {
+      "id": "recall_taylor",
+      "source_requirement_case": "req_taylor",
+      "acceptable": {"chart_types": ["taylor_diagram"]}
+    }
+  ],
+  "selection_cases": [
+    {"id": "select_trend", "source_requirement_case": "req_trend_unspecified_chart", "data_kind": "time_series", "acceptable": {"categories": ["trend_time_series"]}},
+    {"id": "select_regression", "source_requirement_case": "req_regression_prediction", "data_kind": "regression", "acceptable": {"categories": ["prediction_evaluation"], "keywords_any": ["回归", "预测"]}},
+    {"id": "select_category_compare", "source_requirement_case": "req_category_numeric", "data_kind": "category_numeric", "acceptable": {"categories": ["comparison_ranking"]}},
+    {"id": "select_correlation", "source_requirement_case": "req_correlation_heatmap", "data_kind": "multivariate", "acceptable": {"categories": ["relationship_correlation"], "keywords_any": ["相关性", "热图"]}},
+    {"id": "select_distribution", "source_requirement_case": "req_distribution_missing", "data_kind": "distribution_missing", "acceptable": {"categories": ["distribution_uncertainty"]}},
+    {"id": "select_shap", "source_requirement_case": "req_shap", "data_kind": "multivariate", "acceptable": {"categories": ["sensitivity_robustness"], "keywords_any": ["SHAP", "特征重要性"]}},
+    {"id": "select_pca", "source_requirement_case": "req_pca", "data_kind": "multivariate", "acceptable": {"categories": ["clustering_reduction"]}},
+    {"id": "select_no_3d", "source_requirement_case": "req_negative_3d", "data_kind": "category_numeric", "acceptable": {"categories": ["comparison_ranking"], "exclude_chart_type_contains": ["3d"]}},
+    {"id": "select_taylor_no_data_support", "source_requirement_case": "req_taylor", "data_kind": "category_numeric", "acceptable": {"chart_types": ["taylor_diagram"]}, "expect_no_selection": true},
+    {"id": "select_style_only_stop", "source_requirement_case": "req_style_only", "data_kind": "time_series", "acceptable": {}, "expect_ambiguous_stop": true}
+  ],
+  "end_to_end_cases": [
+    {"id": "e2e_trend", "source_requirement_case": "req_trend_unspecified_chart", "data_kind": "time_series", "acceptable": {"categories": ["trend_time_series"]}, "first_code_should_fail": false},
+    {"id": "e2e_regression", "source_requirement_case": "req_regression_prediction", "data_kind": "regression", "acceptable": {"categories": ["prediction_evaluation"], "keywords_any": ["回归", "预测"]}, "first_code_should_fail": false},
+    {"id": "e2e_category_compare_repair", "source_requirement_case": "req_category_numeric", "data_kind": "category_numeric", "acceptable": {"categories": ["comparison_ranking"]}, "first_code_should_fail": true},
+    {"id": "e2e_correlation", "source_requirement_case": "req_correlation_heatmap", "data_kind": "multivariate", "acceptable": {"categories": ["relationship_correlation"], "keywords_any": ["相关性", "热图"]}, "first_code_should_fail": false},
+    {"id": "e2e_distribution_repair", "source_requirement_case": "req_distribution_missing", "data_kind": "distribution_missing", "acceptable": {"categories": ["distribution_uncertainty"]}, "first_code_should_fail": true},
+    {"id": "e2e_no_3d", "source_requirement_case": "req_negative_3d", "data_kind": "category_numeric", "acceptable": {"categories": ["comparison_ranking"], "exclude_chart_type_contains": ["3d"]}, "first_code_should_fail": false},
+    {"id": "e2e_pca", "source_requirement_case": "req_pca", "data_kind": "multivariate", "acceptable": {"categories": ["clustering_reduction"]}, "first_code_should_fail": false},
+    {"id": "e2e_multi_need", "source_requirement_case": "req_multiple_needs", "data_kind": "time_series_model", "acceptable": {"categories": ["trend_time_series", "multi_panel_report", "prediction_evaluation"]}, "first_code_should_fail": false}
+  ]
+}

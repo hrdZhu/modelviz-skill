@@ -1,0 +1,148 @@
+[
+  {
+    "id": "explicit_chart_type",
+    "input": "请画一个雷达图，比较三个方案在成本、稳定性和效率上的表现。",
+    "expected": {
+      "functional_keywords": ["比较"],
+      "chart_types": ["radar_chart"],
+      "explicit_template": true,
+      "is_ambiguous": false
+    },
+    "forbidden": {
+      "functional_keywords": ["科研风", "高级"],
+      "negative_requirements": ["不要雷达图"]
+    }
+  },
+  {
+    "id": "analysis_goal_only",
+    "input": "我想分析几个指标随年份变化的趋势，论文风格即可。",
+    "expected": {
+      "functional_keywords": ["趋势"],
+      "chart_types": [],
+      "style_keywords": ["科研风"],
+      "explicit_template": false,
+      "is_ambiguous": false
+    },
+    "forbidden": {
+      "chart_types": ["smoothed_line_chart_grid", "line_chart"],
+      "functional_keywords": ["论文风", "科研风"]
+    }
+  },
+  {
+    "id": "function_and_style",
+    "input": "比较三个模型预测值和真实值的差异，图要科研风、低饱和。",
+    "expected": {
+      "functional_keywords": ["比较", "预测评估"],
+      "chart_types": [],
+      "style_keywords": ["科研风", "低饱和"],
+      "use_case": "模型评价",
+      "explicit_template": false,
+      "is_ambiguous": false
+    },
+    "forbidden": {
+      "functional_keywords": ["科研风", "低饱和"]
+    }
+  },
+  {
+    "id": "negative_requirements",
+    "input": "做一个模型评价结果图，不要雷达图，也不要三维效果。",
+    "expected": {
+      "functional_keywords": ["预测评估"],
+      "chart_types": [],
+      "use_case": "模型评价",
+      "negative_requirements": ["不要雷达图", "不要三维"],
+      "explicit_template": false,
+      "is_ambiguous": false
+    },
+    "forbidden": {
+      "chart_types": ["radar_chart", "3d_bar_chart"]
+    }
+  },
+  {
+    "id": "colloquial_expression",
+    "input": "我想看哪个因素最重要，图做得高级一点。",
+    "expected": {
+      "functional_keywords": ["模型解释"],
+      "chart_types": [],
+      "style_keywords": ["科研风"],
+      "explicit_template": false,
+      "is_ambiguous": false
+    },
+    "forbidden": {
+      "functional_keywords": ["高级", "科研风"]
+    }
+  },
+  {
+    "id": "math_modeling_expression",
+    "input": "对综合评价指标做PCA主成分分析，用于变量筛选。",
+    "expected": {
+      "functional_keywords": ["聚类降维"],
+      "chart_types": [],
+      "use_case": "变量筛选",
+      "explicit_template": false,
+      "is_ambiguous": false
+    },
+    "forbidden": {
+      "chart_types": ["radar_chart"],
+      "functional_keywords": ["科研风"]
+    }
+  },
+  {
+    "id": "no_chart_type",
+    "input": "分析处理组之间是否存在显著差异，并体现不确定性。",
+    "expected": {
+      "functional_keywords": ["显著性", "不确定性", "比较"],
+      "chart_types": [],
+      "use_case": "组间差异",
+      "explicit_template": false,
+      "is_ambiguous": false
+    },
+    "forbidden": {
+      "chart_types": ["boxplot_grid", "violin_plot_grid"]
+    }
+  },
+  {
+    "id": "ambiguous_requirement",
+    "input": "帮我画一张高级科研图。",
+    "expected": {
+      "functional_keywords": [],
+      "chart_types": [],
+      "style_keywords": ["科研风"],
+      "explicit_template": false,
+      "is_ambiguous": true
+    },
+    "forbidden": {
+      "functional_keywords": ["比较", "趋势", "预测评估"],
+      "chart_types": ["radar_chart", "correlation_heatmap"]
+    }
+  },
+  {
+    "id": "style_only",
+    "input": "要高级、科研风、简洁一些。",
+    "expected": {
+      "functional_keywords": [],
+      "chart_types": [],
+      "style_keywords": ["科研风", "简洁"],
+      "explicit_template": false,
+      "is_ambiguous": true
+    },
+    "forbidden": {
+      "functional_keywords": ["高级", "科研风", "简洁"]
+    }
+  },
+  {
+    "id": "multiple_requirements",
+    "input": "同时展示时间趋势、组间显著差异和模型SHAP特征贡献，做成论文正文的多面板图，不要饼图。",
+    "expected": {
+      "functional_keywords": ["趋势", "显著性", "模型解释", "多面板"],
+      "chart_types": ["multi_panel_report"],
+      "use_case": "论文正文",
+      "negative_requirements": ["不要饼图"],
+      "explicit_template": true,
+      "is_ambiguous": false
+    },
+    "forbidden": {
+      "chart_types": ["donut_chart_grid", "radar_chart"]
+    }
+  }
+]

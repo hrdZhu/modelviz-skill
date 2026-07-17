@@ -1,0 +1,7 @@
+line-length = 100
+extend-exclude = ["raw_templates", "templates/**/original", ".venv"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"

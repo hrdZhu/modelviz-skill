@@ -1,0 +1,284 @@
+# 用户需求解析标准词表。
+# 用途：把自然语言绘图需求归一化为模板检索条件；不包含匹配和排序逻辑。
+version: 1
+source: docs/template_catalog.yaml
+
+# 模板分类：标准值与 template_catalog.yaml 中的 category 保持一致。
+template_categories:
+  clustering_reduction:
+    label: 聚类降维
+    synonyms: [聚类, 降维, 主成分分析, PCA, PCoA, RDA, 排序分析]
+  comparison_ranking:
+    label: 比较排序
+    synonyms: [比较, 对比, 排名, 排序, 多组比较, 方案对比]
+  composite_evaluation:
+    label: 综合评价
+    synonyms: [综合评价, 评价总览, 多指标评价, 综合评估]
+  distribution_uncertainty:
+    label: 分布与不确定性
+    synonyms: [分布, 不确定性, 误差, 显著性, 组间差异]
+  multi_panel_report:
+    label: 多面板报告
+    synonyms: [组合图, 拼图, 多面板, 综合报告, 报告图]
+  network_flow:
+    label: 网络与集合关系
+    synonyms: [网络, 关系网络, 流向, 和弦图, 韦恩图, 集合交集]
+  optimization_decision:
+    label: 优化决策
+    synonyms: [优化, 参数选择, 决策, 最优参数, HANTS]
+  prediction_evaluation:
+    label: 预测评估
+    synonyms: [预测, 模型评估, 回归评估, 分类评估, ROC, 学习曲线]
+  relationship_correlation:
+    label: 关系相关
+    synonyms: [相关性, 关联, 关系, 相关矩阵, 散点回归]
+  sensitivity_robustness:
+    label: 敏感性与稳健性
+    synonyms: [敏感性, 稳健性, 特征重要性, SHAP, PDP, GAM, ALE]
+  spatial_geographic:
+    label: 空间地理
+    synonyms: [空间, 地理, 地图, 栅格, 遥感, 移动窗口]
+  trend_time_series:
+    label: 趋势与时间序列
+    synonyms: [趋势, 时间序列, 时序, 年度变化, 滞后相关]
+
+# 功能关键词：用于 functional_keywords 字段，尽量合并 catalog 中同义或近义表达。
+functional_keywords:
+  趋势:
+    synonyms: [时间趋势, 时间序列, 时序变化, 年度变化, 平滑曲线, 趋势回归, 流动趋势]
+  比较:
+    synonyms: [对比, 分组比较, 多组比较, 方案对比, 排序比较, 高度比较]
+  排名:
+    synonyms: [排序, 排名图, 因子排名, 特征排序, 重要性排序]
+  分布:
+    synonyms: [分组分布, 分布曲线, 边缘分布, 山脊分布, 离散程度]
+  不确定性:
+    synonyms: [误差, 误差棒, 置信区间, 置信椭圆, 残差, 拟合误差]
+  显著性:
+    synonyms: [显著性标记, P值, 组间差异, 秩和检验, Tukey HSD, FDR校正]
+  相关性:
+    synonyms: [相关, 关联, 相关系数, Spearman相关, Pearson相关, 偏相关, Mantel相关]
+  回归:
+    synonyms: [线性回归, 多元线性回归, 回归拟合, 回归预测, 拟合优度, R2, RMSE]
+  分类评估:
+    synonyms: [二分类, 多分类, ROC, AUC, 混淆矩阵, 分类指标]
+  预测评估:
+    synonyms: [预测实测, 回归评估, 学习曲线, 泰勒图, 模型预测评估]
+  敏感性:
+    synonyms: [敏感性分析, 阈值效应, 特征响应, 非线性效应, 边际影响]
+  模型解释:
+    synonyms: [SHAP, 特征重要性, 特征贡献, 依赖图, 交互效应, PDP, ALE, GeoShapley]
+  聚类降维:
+    synonyms: [PCA, PCoA, RDA, 层次聚类, 变量降维, 因子载荷, 约束排序]
+  组成占比:
+    synonyms: [组成比例, 百分比组成, 贡献比例, 类别组成, 占比, 饼图矩阵]
+  网络关系:
+    synonyms: [网络图, 相关性网络, 特征关系, 关系和弦, 集合交集, 韦恩图]
+  空间分析:
+    synonyms: [栅格分析, 空间回归, 空间解释, 空间异质性, 移动窗口, 遥感回归制图]
+  优化决策:
+    synonyms: [参数选择, 最佳参数, 决策评价, 参数敏感性]
+  多面板:
+    synonyms: [组合图, 综合报告, 多图拼版, 小图矩阵, 分面图]
+  三维:
+    synonyms: [3D, 三维趋势, 三维曲面, 立体, 空间层叠]
+  环形径向:
+    synonyms: [环形, 环状, 极坐标, 径向, 玫瑰图, 南丁格尔玫瑰图]
+
+# 图表类型：catalog_chart_types 保留 catalog 中的程序检索值；groups 用于口语归一化。
+chart_types:
+  catalog_chart_types:
+    - 2d_partial_dependence_contour
+    - 3d_bar_chart
+    - 3d_ribbon_chart
+    - 3d_stacked_surface
+    - 3d_surface_report
+    - 3d_waterfall_plot
+    - ale_heatmap
+    - bar_matrix_report
+    - boxplot_grid
+    - bubble_matrix
+    - chord_diagram
+    - circular_bar_chart
+    - circular_dashboard
+    - circular_heatmap
+    - clustered_heatmap
+    - composite_heatmap_network
+    - composite_time_series_chart
+    - contour_heatmap_grid
+    - correlation_heatmap
+    - correlation_network_heatmap
+    - donut_chart_grid
+    - dual_axis_bar_line_chart
+    - effect_decomposition_bar_chart
+    - encoded_heatmap
+    - geoshapley_explanation_plot
+    - geospatial_ml_shap_analysis
+    - geospatial_moving_window_analysis
+    - geospatial_raster_analysis
+    - grouped_heatmap
+    - horizontal_stacked_bar_chart
+    - image_grid_postprocessing
+    - interaction_bubble_matrix
+    - interaction_matrix_heatmap
+    - interaction_network
+    - joint_regression_plot
+    - lag_correlation_line_chart
+    - learning_curve
+    - lollipop_bubble_chart
+    - mantel_network_heatmap
+    - multi_panel_report
+    - network_radar_report
+    - ordination_biplot
+    - ordination_scatter
+    - parameter_selection_scatter
+    - partial_dependence_grid
+    - percentage_stacked_area
+    - petal_heatmap
+    - radar_chart
+    - radial_bar_error_chart
+    - radial_effect_chart
+    - radial_stacked_bar_chart
+    - regression_diagnostic_grid
+    - regression_fit_grid
+    - regression_fit_scatter
+    - ridgeline_plot
+    - roc_curve
+    - rose_chart_grid
+    - scatter_heatmap_matrix
+    - scatter_matrix
+    - scatter_matrix_report
+    - scatter_network_report
+    - scatter_regression
+    - shap_bar_chart
+    - shap_dependence_grid
+    - shap_dependence_scatter
+    - shap_gam_effect_grid
+    - shap_interaction_scatter
+    - shap_multi_panel_report
+    - shap_pdp_report
+    - shap_polynomial_fit
+    - shap_rose_chart
+    - shap_summary_plot
+    - shap_waterfall
+    - small_multiple_bar_chart
+    - smoothed_line_chart_grid
+    - split_triangular_heatmap
+    - stacked_bar_chart
+    - taylor_diagram
+    - ternary_scatter
+    - venn_diagram_grid
+    - violin_boxplot
+    - violin_plot_grid
+  groups:
+    折线图:
+      synonyms: [线图, 曲线图, 趋势线, 趋势曲线, 平滑折线]
+      chart_type_ids: [smoothed_line_chart_grid, lag_correlation_line_chart, learning_curve]
+    柱状图:
+      synonyms: [柱形图, 条形图, bar, 条形比较]
+      chart_type_ids: [stacked_bar_chart, horizontal_stacked_bar_chart, small_multiple_bar_chart, 3d_bar_chart]
+    热图:
+      synonyms: [热力图, 相关性热图, 矩阵热图, 环形热图]
+      chart_type_ids: [correlation_heatmap, clustered_heatmap, circular_heatmap, grouped_heatmap, encoded_heatmap]
+    散点图:
+      synonyms: [散点, 气泡图, 回归散点, 散点矩阵]
+      chart_type_ids: [scatter_regression, regression_fit_scatter, scatter_matrix, bubble_matrix]
+    箱线图:
+      synonyms: [箱型图, boxplot, 盒须图]
+      chart_type_ids: [boxplot_grid, violin_boxplot]
+    小提琴图:
+      synonyms: [violin plot, 小提琴箱线图, 分布小提琴]
+      chart_type_ids: [violin_plot_grid, violin_boxplot]
+    雷达图:
+      synonyms: [蛛网图, 能力画像, 多维对比图]
+      chart_type_ids: [radar_chart, network_radar_report]
+    环形图:
+      synonyms: [甜甜圈图, 圆环图, 环状图, 多组环形图]
+      chart_type_ids: [donut_chart_grid, circular_dashboard, circular_heatmap]
+    玫瑰图:
+      synonyms: [南丁格尔玫瑰图, 极区图, 扇形柱状图]
+      chart_type_ids: [rose_chart_grid, shap_rose_chart]
+    网络图:
+      synonyms: [关系网络, 相关网络, 交互网络, 和弦图]
+      chart_type_ids: [chord_diagram, interaction_network, correlation_network_heatmap, scatter_network_report]
+    ROC曲线:
+      synonyms: [ROC, AUC曲线, 二分类ROC, 多模型ROC]
+      chart_type_ids: [roc_curve]
+    SHAP图:
+      synonyms: [SHAP分析图, 特征贡献图, 解释性图, SHAP综合图]
+      chart_type_ids: [shap_summary_plot, shap_bar_chart, shap_dependence_grid, shap_multi_panel_report, shap_waterfall]
+    地图栅格:
+      synonyms: [空间地图, 遥感栅格, 栅格制图, 地理分析图]
+      chart_type_ids: [geospatial_raster_analysis, geospatial_moving_window_analysis, geospatial_ml_shap_analysis]
+    三维图:
+      synonyms: [3D图, 立体图, 三维柱状图, 三维瀑布图, 三维曲面]
+      chart_type_ids: [3d_bar_chart, 3d_waterfall_plot, 3d_stacked_surface, 3d_surface_report]
+
+# 风格关键词：catalog 中主要描述功能，风格词较少，这里补充常见用户表达。
+style_keywords:
+  科研风:
+    synonyms: [论文风, 期刊风, 学术风, 高级, 高级科研图, 科研感, 专业一点, scientific, publication-ready]
+  简洁:
+    synonyms: [干净, 清爽, 不花哨, 少装饰, minimalist]
+  低饱和:
+    synonyms: [柔和配色, 莫兰迪, 颜色淡一点, 不刺眼]
+  高对比:
+    synonyms: [突出差异, 对比明显, 颜色分明]
+  答辩风:
+    synonyms: [展示风, PPT风, 演示友好, 看起来醒目]
+  多面板排版:
+    synonyms: [组合排版, 拼版, 子图排列, 报告式布局]
+
+# 使用场景：用于 use_case 字段。
+use_cases:
+  论文正文:
+    synonyms: [论文图, 正文图, 期刊论文, 科研论文, 文章插图]
+  论文附录:
+    synonyms: [补充材料, 附图, 附录图, 扩展结果]
+  模型评价:
+    synonyms: [模型评估, 性能评估, 预测效果, 分类效果, 回归效果]
+  模型解释:
+    synonyms: [解释模型结果, 特征贡献解释, 变量重要性说明, SHAP解释]
+  变量筛选:
+    synonyms: [指标筛选, 特征筛选, 维度压缩, 主成分解释]
+  组间差异:
+    synonyms: [处理组比较, 区域比较, 类别差异, 显著性检验展示]
+  关系探索:
+    synonyms: [相关性分析, 变量关系分析, 关联结构展示]
+  趋势展示:
+    synonyms: [年度变化, 时间变化, 时序趋势, 滞后效应分析]
+  空间分析:
+    synonyms: [遥感分析, 栅格分析, 空间异质性, 地理驱动分析]
+  答辩展示:
+    synonyms: [PPT展示, 汇报展示, 比赛答辩, 结果展示]
+
+# 常见同义词和口语表达：解析器可先查这里，再映射到上面的标准词。
+common_synonyms:
+  不要三维: [别用3D, 不用立体, 不要立体图, 不要三维效果]
+  不要饼图: [别画饼图, 不想要饼, 不用环形图, 不要甜甜圈图]
+  做得高级: [好看一点, 像论文, 科研感, 专业一点]
+  看趋势: [变化趋势, 随时间变化, 年度变化, 曲线走势]
+  看差异: [比较差别, 对比大小, 组间差异, 谁更好]
+  看关系: [有没有关系, 相关不相关, 变量关联, 影响关系]
+  看贡献: [哪个因素重要, 变量重要性, 特征贡献, 驱动因素]
+  看误差: [误差范围, 不确定性, 置信区间, 残差]
+  综合展示: [放一张图里, 做成组合图, 多个子图, 汇总报告图]
+
+# 需要人工确认的词：这些词在 catalog 中存在重复或边界较模糊，暂不强行删除。
+review_terms:
+  - term: 热图 / 热力图
+    note: 两者在用户表达中基本同义，建议统一到“热图”。
+  - term: 环形图 / 环状图 / 圆形图
+    note: 可能指 donut、circular heatmap、circular bar，需要结合功能判断。
+  - term: 玫瑰图 / 南丁格尔玫瑰图 / 极区图
+    note: 通常可合并，但 SHAP 玫瑰图和普通比例玫瑰图语义不同。
+  - term: 相关性 / 关系 / 关联
+    note: 可作为同义入口，但具体图表需区分热图、散点、网络和结构方程。
+  - term: 模型评价 / 预测评估 / 综合评价
+    note: 都和模型结果有关，但分类、回归、综合仪表盘的模板不同。
+  - term: 3D / 三维 / 立体
+    note: 既可能是明确图表类型，也可能只是视觉风格偏好。
+  - term: 多面板 / 组合图 / 报告图
+    note: 可作为使用场景或图表结构，需要后续解析时保留上下文。
+  - term: 空间地图 / 栅格 / 遥感
+    note: 普通地图展示和逐像元建模分析差别较大，需要确认数据类型。

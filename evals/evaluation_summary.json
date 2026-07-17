@@ -1,0 +1,680 @@
+{
+  "evaluation_mode": "mock_structured_models_with_real_tools",
+  "case_file": "evals\\evaluation_cases.json",
+  "requirement": {
+    "case_count": 20,
+    "success_count": 20,
+    "details": [
+      {
+        "id": "req_trend_unspecified_chart",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_explicit_radar",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_negative_3d",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_regression_prediction",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_roc",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_correlation_heatmap",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_violin_significance",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_shap",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_spatial",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_optimization",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_multi_panel_report",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_pca",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_distribution_missing",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_style_only",
+        "success": true,
+        "is_ambiguous": true
+      },
+      {
+        "id": "req_low_saturation_only",
+        "success": true,
+        "is_ambiguous": true
+      },
+      {
+        "id": "req_category_numeric",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_multiple_needs",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_no_pie",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_network",
+        "success": true,
+        "is_ambiguous": false
+      },
+      {
+        "id": "req_taylor",
+        "success": true,
+        "is_ambiguous": false
+      }
+    ]
+  },
+  "recall": {
+    "case_count": 15,
+    "recall_at_5": 1.0,
+    "recall_at_8": 1.0,
+    "details": [
+      {
+        "id": "recall_trend",
+        "success": true,
+        "acceptable_count": 4,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "trd_dual_axis_bar_line",
+          "trd_lag_correlation_analysis",
+          "trd_smoothed_trend_curves",
+          "trd_composite_line_bar_dual_axis",
+          "mpn_scatter_matrix_timeseries_regression",
+          "cmp_flowing_percentage_stack",
+          "cmp_3d_ribbon_chart",
+          "cmp_3d_waterfall_distribution"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_radar",
+        "success": true,
+        "acceptable_count": 2,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "cmp_multi_metric_radar",
+          "cmp_circular_barplot",
+          "cmp_ternary_scatter",
+          "cmp_correlation_stacked_bar",
+          "cmp_flowing_percentage_stack",
+          "cmp_gradient_single_factor_bar",
+          "cmp_horizontal_percentage_stack",
+          "cmp_multi_donut_charts"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_negative_3d",
+        "success": true,
+        "acceptable_count": 12,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "cmp_gradient_single_factor_bar",
+          "cmp_stack_pie_box_report",
+          "cmp_circular_barplot",
+          "cmp_ternary_scatter",
+          "cmp_correlation_stacked_bar",
+          "cmp_flowing_percentage_stack",
+          "cmp_horizontal_percentage_stack",
+          "cmp_multi_donut_charts"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_regression",
+        "success": true,
+        "acceptable_count": 6,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "prd_grouped_regression_fit",
+          "prd_multi_model_regression_fit",
+          "prd_regression_learning_curve",
+          "prd_regression_evaluation_panels",
+          "prd_taylor_diagram",
+          "prd_voting_ensemble_learning_curve",
+          "prd_xgboost_regression_ale_heatmap",
+          "evl_ml_metric_circular_dashboard"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_roc",
+        "success": true,
+        "acceptable_count": 1,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "prd_multi_model_roc",
+          "cmp_circular_barplot",
+          "cmp_ternary_scatter",
+          "cmp_correlation_stacked_bar",
+          "cmp_flowing_percentage_stack",
+          "cmp_gradient_single_factor_bar",
+          "cmp_horizontal_percentage_stack",
+          "cmp_multi_donut_charts"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_correlation_heatmap",
+        "success": true,
+        "acceptable_count": 13,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "rel_fdr_correlation_heatmap",
+          "rel_pearson_correlation_heatmap",
+          "rel_lollipop_bubble_coefficients",
+          "rel_radial_effect_chart",
+          "rel_multilayer_encoded_correlation_heatmap",
+          "rel_network_correlation_heatmap",
+          "rel_diagonal_split_triangular_heatmap",
+          "rel_scatter_error_colormap_regression"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_violin",
+        "success": true,
+        "acceptable_count": 6,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "dis_tukey_hsd_violin_grid",
+          "dis_violin_mean_change_grid",
+          "dis_rank_sum_violin_box",
+          "dis_radial_bar_error_significance",
+          "sen_shap_importance_rose",
+          "dis_combined_boxplot_grid",
+          "dis_ridgeline_distribution",
+          "clu_spearman_cluster_heatmap"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_shap",
+        "success": true,
+        "acceptable_count": 12,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "sen_grouped_rf_shap",
+          "sen_shap_interaction_network",
+          "mpn_rf_importance_correlation",
+          "mpn_plot_postprocessing_grid",
+          "sen_shap_top_dependence_grid",
+          "cmp_shap_heatmap_bar_report",
+          "evl_ml_metric_circular_dashboard",
+          "prd_regression_learning_curve"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_spatial",
+        "success": true,
+        "acceptable_count": 4,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "spa_moving_window_rf_shap_drivers",
+          "spa_xgboost_geoshapley",
+          "spa_pixelwise_standardized_regression",
+          "spa_moving_window_partial_correlation",
+          "clu_pcoa_permanova",
+          "cmp_circular_barplot",
+          "cmp_ternary_scatter",
+          "cmp_shap_heatmap_bar_report"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_optimization",
+        "success": true,
+        "acceptable_count": 5,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "opt_hants_parameter_selection",
+          "sen_grouped_rf_shap",
+          "sen_grouped_shap_top_features",
+          "sen_shap_importance_dependence",
+          "sen_shap_importance_rose",
+          "sen_gam_contour_heatmap",
+          "sen_gam_partial_residual",
+          "sen_shap_dependence_distribution_threshold"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_multi_panel",
+        "success": true,
+        "acceptable_count": 4,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "mpn_rf_importance_correlation",
+          "cmp_shap_heatmap_bar_report",
+          "cmp_stack_pie_box_report",
+          "sen_shap_importance_dependence",
+          "mpn_plot_postprocessing_grid",
+          "rel_scatter_error_colormap_regression",
+          "rel_bar_association_matrix",
+          "rel_grouped_regression_marginal_scatter"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_pca",
+        "success": true,
+        "acceptable_count": 2,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "clu_pca_correlation_heatmap",
+          "clu_spearman_cluster_heatmap",
+          "clu_pcoa_permanova",
+          "clu_rda_biplot",
+          "rel_lollipop_bubble_coefficients",
+          "rel_radial_effect_chart",
+          "rel_multilayer_encoded_correlation_heatmap",
+          "rel_network_correlation_heatmap"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_distribution_missing",
+        "success": true,
+        "acceptable_count": 6,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "dis_radial_bar_error_significance",
+          "prd_regression_evaluation_panels",
+          "rel_grouped_regression_marginal_scatter",
+          "dis_combined_boxplot_grid",
+          "dis_ridgeline_distribution",
+          "dis_violin_mean_change_grid",
+          "dis_rank_sum_violin_box",
+          "dis_tukey_hsd_violin_grid"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_no_pie",
+        "success": true,
+        "acceptable_count": 14,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "cmp_flowing_percentage_stack",
+          "cmp_nightingale_rose_grid",
+          "cmp_ternary_scatter",
+          "cmp_correlation_stacked_bar",
+          "cmp_horizontal_percentage_stack",
+          "sen_grouped_shap_top_features"
+        ],
+        "error": null
+      },
+      {
+        "id": "recall_taylor",
+        "success": true,
+        "acceptable_count": 1,
+        "top5_hit": true,
+        "top8_hit": true,
+        "top8_ids": [
+          "prd_taylor_diagram",
+          "prd_multi_model_roc",
+          "prd_multi_model_regression_fit",
+          "prd_regression_learning_curve",
+          "prd_grouped_regression_fit",
+          "prd_regression_evaluation_panels",
+          "prd_voting_ensemble_learning_curve",
+          "prd_xgboost_binary_shap"
+        ],
+        "error": null
+      }
+    ]
+  },
+  "selection": {
+    "case_count": 10,
+    "accuracy": 1.0,
+    "details": [
+      {
+        "id": "select_trend",
+        "success": true,
+        "selected_template_id": "trd_dual_axis_bar_line",
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_regression",
+        "success": true,
+        "selected_template_id": "prd_grouped_regression_fit",
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_category_compare",
+        "success": true,
+        "selected_template_id": "cmp_circular_barplot",
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_correlation",
+        "success": true,
+        "selected_template_id": "rel_fdr_correlation_heatmap",
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_distribution",
+        "success": true,
+        "selected_template_id": "dis_radial_bar_error_significance",
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_shap",
+        "success": true,
+        "selected_template_id": "sen_grouped_rf_shap",
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_pca",
+        "success": true,
+        "selected_template_id": "clu_pca_correlation_heatmap",
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_no_3d",
+        "success": true,
+        "selected_template_id": "cmp_gradient_single_factor_bar",
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_taylor_no_data_support",
+        "success": true,
+        "selected_template_id": null,
+        "correct": true,
+        "error": null
+      },
+      {
+        "id": "select_style_only_stop",
+        "success": true,
+        "selected_template_id": null,
+        "correct": true,
+        "error": null
+      }
+    ]
+  },
+  "end_to_end": {
+    "case_count": 8,
+    "end_to_end_success_rate": 0.875,
+    "first_execution_success_rate": 0.625,
+    "final_execution_success_rate": 0.875,
+    "average_image_quality_score": 4.5,
+    "automatic_repair_success_rate": 1.0,
+    "average_repair_attempts": 1,
+    "guardrails": {
+      "data_column_hallucination_rate": 0.0,
+      "candidate_scope_violation_rate": 0.0,
+      "original_template_modification_rate": 0.0,
+      "user_data_modification_rate": 0.0
+    },
+    "details": [
+      {
+        "id": "e2e_trend",
+        "selected_template_id": "trd_dual_axis_bar_line",
+        "requirement_success": true,
+        "selected_correct": true,
+        "relevant_columns_real": true,
+        "first_execution_success": true,
+        "final_execution_success": true,
+        "quality_passed": true,
+        "image_quality_score": 5,
+        "entered_repair": false,
+        "repair_success": false,
+        "repair_attempts": 0,
+        "template_modified": false,
+        "data_modified": false,
+        "end_to_end_success": true,
+        "stage5_success": true,
+        "stage5_failed_step": "",
+        "quality_error": null
+      },
+      {
+        "id": "e2e_regression",
+        "selected_template_id": "prd_grouped_regression_fit",
+        "requirement_success": true,
+        "selected_correct": true,
+        "relevant_columns_real": true,
+        "first_execution_success": true,
+        "final_execution_success": true,
+        "quality_passed": true,
+        "image_quality_score": 5,
+        "entered_repair": false,
+        "repair_success": false,
+        "repair_attempts": 0,
+        "template_modified": false,
+        "data_modified": false,
+        "end_to_end_success": true,
+        "stage5_success": true,
+        "stage5_failed_step": "",
+        "quality_error": null
+      },
+      {
+        "id": "e2e_category_compare_repair",
+        "selected_template_id": "cmp_circular_barplot",
+        "requirement_success": true,
+        "selected_correct": true,
+        "relevant_columns_real": true,
+        "first_execution_success": false,
+        "final_execution_success": true,
+        "quality_passed": true,
+        "image_quality_score": 5,
+        "entered_repair": true,
+        "repair_success": true,
+        "repair_attempts": 1,
+        "template_modified": false,
+        "data_modified": false,
+        "end_to_end_success": true,
+        "stage5_success": false,
+        "stage5_failed_step": "execute_plot_script",
+        "quality_error": null
+      },
+      {
+        "id": "e2e_correlation",
+        "selected_template_id": "rel_fdr_correlation_heatmap",
+        "requirement_success": true,
+        "selected_correct": true,
+        "relevant_columns_real": true,
+        "first_execution_success": true,
+        "final_execution_success": true,
+        "quality_passed": true,
+        "image_quality_score": 5,
+        "entered_repair": false,
+        "repair_success": false,
+        "repair_attempts": 0,
+        "template_modified": false,
+        "data_modified": false,
+        "end_to_end_success": true,
+        "stage5_success": true,
+        "stage5_failed_step": "",
+        "quality_error": null
+      },
+      {
+        "id": "e2e_distribution_repair",
+        "selected_template_id": "dis_radial_bar_error_significance",
+        "requirement_success": true,
+        "selected_correct": true,
+        "relevant_columns_real": true,
+        "first_execution_success": false,
+        "final_execution_success": true,
+        "quality_passed": true,
+        "image_quality_score": 5,
+        "entered_repair": true,
+        "repair_success": true,
+        "repair_attempts": 1,
+        "template_modified": false,
+        "data_modified": false,
+        "end_to_end_success": true,
+        "stage5_success": false,
+        "stage5_failed_step": "execute_plot_script",
+        "quality_error": null
+      },
+      {
+        "id": "e2e_no_3d",
+        "selected_template_id": "cmp_gradient_single_factor_bar",
+        "requirement_success": true,
+        "selected_correct": true,
+        "relevant_columns_real": true,
+        "first_execution_success": true,
+        "final_execution_success": true,
+        "quality_passed": true,
+        "image_quality_score": 5,
+        "entered_repair": false,
+        "repair_success": false,
+        "repair_attempts": 0,
+        "template_modified": false,
+        "data_modified": false,
+        "end_to_end_success": true,
+        "stage5_success": true,
+        "stage5_failed_step": "",
+        "quality_error": null
+      },
+      {
+        "id": "e2e_pca",
+        "selected_template_id": "clu_pca_correlation_heatmap",
+        "requirement_success": true,
+        "selected_correct": true,
+        "relevant_columns_real": true,
+        "first_execution_success": false,
+        "final_execution_success": false,
+        "quality_passed": false,
+        "image_quality_score": 1,
+        "entered_repair": false,
+        "repair_success": false,
+        "repair_attempts": 0,
+        "template_modified": false,
+        "data_modified": false,
+        "end_to_end_success": false,
+        "stage5_success": false,
+        "stage5_failed_step": "recheck_dependencies",
+        "quality_error": null
+      },
+      {
+        "id": "e2e_multi_need",
+        "selected_template_id": "trd_dual_axis_bar_line",
+        "requirement_success": true,
+        "selected_correct": true,
+        "relevant_columns_real": true,
+        "first_execution_success": true,
+        "final_execution_success": true,
+        "quality_passed": true,
+        "image_quality_score": 5,
+        "entered_repair": false,
+        "repair_success": false,
+        "repair_attempts": 0,
+        "template_modified": false,
+        "data_modified": false,
+        "end_to_end_success": true,
+        "stage5_success": true,
+        "stage5_failed_step": "",
+        "quality_error": null
+      }
+    ]
+  },
+  "metrics": {
+    "end_to_end_task_success_rate": 0.875,
+    "recall_at_5": 1.0,
+    "recall_at_8": 1.0,
+    "final_template_selection_accuracy": 1.0,
+    "first_execution_success_rate": 0.625,
+    "final_execution_success_rate": 0.875,
+    "average_image_quality_score": 4.5,
+    "automatic_repair_success_rate": 1.0,
+    "average_repair_attempts": 1,
+    "guardrails": {
+      "data_column_hallucination_rate": 0.0,
+      "candidate_scope_violation_rate": 0.0,
+      "original_template_modification_rate": 0.0,
+      "user_data_modification_rate": 0.0
+    }
+  },
+  "pre_optimization_metrics": {
+    "end_to_end_task_success_rate": 0.0,
+    "recall_at_5": 0.9333,
+    "recall_at_8": 0.9333,
+    "final_template_selection_accuracy": 0.9,
+    "first_execution_success_rate": 0.5,
+    "final_execution_success_rate": 0.0,
+    "average_image_quality_score": 1.0,
+    "automatic_repair_success_rate": 0.0,
+    "guardrails": {
+      "data_column_hallucination_rate": 0.125,
+      "candidate_scope_violation_rate": 0.125,
+      "original_template_modification_rate": 0.0,
+      "user_data_modification_rate": 0.0
+    }
+  },
+  "optimization_log": [
+    "Case-insensitive reverse package mapping for catalog package names such as pillow.",
+    "Category-alias scoring boost for deterministic candidate recall.",
+    "Treat overwritten output artifacts as generated files during rerun.",
+    "Avoid classifying ordinary savefig warning lines as save failures."
+  ],
+  "main_failure_reasons": [
+    "end_to_end:e2e_pca failed at recheck_dependencies"
+  ]
+}
