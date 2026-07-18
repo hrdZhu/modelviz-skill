@@ -1,6 +1,8 @@
 .env
 .env.*
 *.log
+*.tif
+*.tiff
 
 __pycache__/
 *.py[cod]
