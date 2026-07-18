@@ -231,6 +231,7 @@ modelviz-skill/
 ├── tests/
 ├── evals/
 ├── examples/
+├── gallery/
 ├── workspace/
 ├── outputs/
 └── requirements.txt
@@ -245,6 +246,7 @@ modelviz-skill/
 - `docs/`：模板目录、需求词表、依赖映射和阶段说明。
 - `tests/`：单元测试和集成测试。
 - `evals/`：离线评估案例、脚本和指标报告。
+- `gallery/`：从模板 `output/` 目录汇总出的预览图库，方便发布展示。
 - `workspace/`：运行时中间文件目录。
 - `outputs/`：最终图表输出目录。
 

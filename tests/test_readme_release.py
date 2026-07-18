@@ -36,6 +36,7 @@ def test_readme_referenced_project_paths_exist():
         "tests/",
         "evals/",
         "examples/",
+        "gallery/",
         "workspace/",
         "outputs/",
         "requirements.txt",
