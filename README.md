@@ -17,19 +17,19 @@
   <tr>
     <td width="25%" align="center">
       <strong>智能选图</strong><br>
-      <sub> </sub>
+      <sub>                    </sub>
     </td>
     <td width="25%" align="center">
       <strong>模板适配</strong><br>
-      <sub>  </sub>
+      <sub>                    </sub>
     </td>
     <td width="25%" align="center">
       <strong>按需依赖</strong><br>
-      <sub>  库</sub>
+      <sub>                    </sub>
     </td>
     <td width="25%" align="center">
       <strong>双重质检</strong><br>
-      <sub>  </sub>
+      <sub>                    </sub>
     </td>
   </tr>
 </table>
