@@ -13,13 +13,26 @@
   <img src="https://img.shields.io/badge/Output-PNG%20%7C%20SVG%20%7C%20PDF%20%7C%20Python-8A2BE2?style=flat-square" alt="Outputs">
 </p>
 
-<p>
-  <a href="#效果预览">效果预览</a> ·
-  <a href="#核心能力">核心能力</a> ·
-  <a href="#使用示例">使用示例</a> ·
-  <a href="#工作流程">工作流程</a> ·
-  <a href="#质量评估">质量评估</a>
-</p>
+<table>
+  <tr>
+    <td width="25%" align="center">
+      <strong>智能选图</strong><br>
+      <sub> </sub>
+    </td>
+    <td width="25%" align="center">
+      <strong>模板适配</strong><br>
+      <sub>  </sub>
+    </td>
+    <td width="25%" align="center">
+      <strong>按需依赖</strong><br>
+      <sub>  库</sub>
+    </td>
+    <td width="25%" align="center">
+      <strong>双重质检</strong><br>
+      <sub>  </sub>
+    </td>
+  </tr>
+</table>
 
 </div>
 
